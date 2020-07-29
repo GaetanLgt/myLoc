@@ -6,7 +6,13 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+
+        {% for produitRetour in produitsRetour %}
+            {{ produitRetour }}
+        {% endfor %}
+        
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
