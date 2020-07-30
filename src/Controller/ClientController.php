@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Affaires;
 use App\Entity\User;
+use App\Entity\Emprunt;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 

@@ -20,7 +20,11 @@
         <h6 class="mt-5 pb-2 text-center deep-orange-text">Vos produits publié</h6>
             <div class="hoverable lime lighten-1 rounded">
                 {% for produit in produitsClient %}
-                    <p>{{ produit.name }}</p>
+                <p>{{ produit.name }}</p>
+                <p>{{ produit.proprietaire }}</p>
+                <p>{{ produit.categorie }}</p>
+                <p>{{ produit.description }}</p>
+                <p>{{ produit.nbpts}}</p>
                 {% endfor %}
             </div>
     </div>
