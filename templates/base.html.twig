@@ -20,7 +20,16 @@
   <div class="nav-wrapper deep-orange">
       <a href="" class="ml-4 blue lighten-4"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">Catégorie</a></li>
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Catégories<i class="material-icons right"></i></a></li>
+            <ul id="dropdown1" class="dropdown-content">
+
+              {% for categorie in categories %}
+              
+              <li><a href="/category/{{ categorie.id }}">{{ categorie.name }}</a></li>
+              {% endfor %}
+
+            </ul>
           <li><a href="#">Produit</a></li>
             {% if app.user %}
               <li><a href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
@@ -47,7 +56,16 @@
             {% endif %}
 
             <li><div class="divider"></div></li>
-            <li><a href="#">Catégorie</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Catégories<i class="material-icons right"></i></a></li>
+            <ul id="dropdown2" class="dropdown-content">
+
+              {% for categorie in categories %}
+              
+              <li><a href="/category/{{ categorie.id }}">{{ categorie.name }}</a></li>
+              {% endfor %}
+
+            </ul>
+            <li><a href="./">Accueil</a></li>
             <li><a href="#">Produit</a></li>
             <li><div class="divider"></div></li>
             <li><a class="subheader"></a></li>
@@ -61,6 +79,34 @@
         {% block body %}
 
         {% endblock %}
+
+        {% block footer %}
+                <footer class="page-footer deep-orange">
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <h5 class="white-text">Footer Test</h5>
+                <p class="grey-text text-lighten-4">Stiv la petit pute</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Liens</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Lien 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Lien 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Lien 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Lien 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020
+            <a class="grey-text text-lighten-4 right" href="#!">TEST</a>
+            </div>
+          </div>
+        </footer>
+            {% endblock %}
 
         {% block javascripts %}
             <!-- JS, Popper.js, and jQuery -->

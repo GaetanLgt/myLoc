@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Affaires;
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,9 +17,11 @@ class IndexController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         $produitsRetour = $em->getRepository(Affaires::class)->findBy([], ['id' => 'DESC'], 5);
+        $categories = $em->getRepository(Category::class)->findAll();
 
         return $this->render('index/index.html.twig', [
             'produitsRetour' => $produitsRetour,
+            'categories' => $categories,
         ]);
     }
 }
