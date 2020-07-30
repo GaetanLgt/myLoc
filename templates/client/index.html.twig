@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration Utilisateur{% endblock %}
+
+{% block body %}
+
+{% if app.user %}
+    <div class="container">
+    <div class="row">
+    <div class="col s6">
+        <h6 class="mt-5 pb-2 text-center deep-orange-text">Gérer les informations de votre compte</h6>
+            <div class="hoverable lime lighten-1 rounded">
+                <p class="pt-3 ml-3">Nom: {{ app.user.firstname}}</p>
+                <p class="ml-3">Prénom: {{ app.user.lastname}}</p>
+                <p class="ml-3">Email: {{ app.user.email}}</p>
+                <p class="pb-3 ml-3">Nombre de points: {{ app.user.totalpts}}</p>
+            </div>
+    </div>
+    <div class="col s6">
+        <h6 class="mt-5 pb-2 text-center deep-orange-text">Vos produits publié</h6>
+            <div class="hoverable lime lighten-1 rounded">
+                <p class="pt-3 ml-3">Nom: {{ app.user.firstname}}</p>
+                <p class="ml-3">Prénom: {{ app.user.lastname}}</p>
+                <p class="ml-3">Email: {{ app.user.email}}</p>
+                <p class="pb-3 ml-3">Nombre de points: {{ app.user.totalpts}}</p>
+            </div>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="col s6">
+        <h6 class="mt-5 pb-2 text-center deep-orange-text">Vos produits empruntés</h6>
+            <div class="hoverable lime lighten-1 rounded">
+                <p class="ml-3">Nom: {{ app.user.firstname}}</p>
+                <p class="ml-3">Prénom: {{ app.user.lastname}}</p>
+                <p class="ml-3">Email: {{ app.user.email}}</p>
+                <p class="pb-3 ml-3">Nombre de points: {{ app.user.totalpts}}</p>
+            </div>
+    </div>
+    <div class="col s6">
+        <h6 class="mt-5 pb-2 text-center deep-orange-text">?</h6>
+            <div class="hoverable orange lighten-4 rounded">
+                
+            </div>
+    </div>
+    </div>
+    </div>       
+{% endif %}
+
+{% endblock %}

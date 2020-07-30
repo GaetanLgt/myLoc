@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
 
@@ -18,11 +18,12 @@
       <span class="card-title grey-text text-darken-4">{{ produitRetour.name }}<i class="material-icons right">close</i></span>
       <p>{{ produitRetour.description }}</p>
       <p>Nombre de points : {{ produitRetour.nbpts }}</p>
+      <p>Categorier: {{ produitRetour.categorie }}</p>
+      <p>Nom : {{ produitRetour.proprietaire }}</p>
       <a class="waves-effect waves-light btn pulse"><i class="material-icons right">add_circle</i>Reserver</a>
     </div>
     </div>
-
-    </div>
+    </div>*
     {% endfor %}
         
 {% endblock %}
