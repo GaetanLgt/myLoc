@@ -12,10 +12,17 @@
 p {
     font-size: 15px;
 }
-img {
-  height: 300px;
-  width: 300px;
-}
+
 li a{
   text-transform: uppercase;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
