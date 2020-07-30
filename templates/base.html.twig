@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+
         {% block stylesheets %}
             <!-- CSS -->
             <link rel="stylesheet" href="../assets/style.css">
@@ -11,8 +12,8 @@
             <link href="/assets/css/materialize.css" rel="stylesheet"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
         {% endblock %}
+        
     </head>
 
   <nav> 
@@ -22,12 +23,13 @@
           <li><a href="#">Catégorie</a></li>
           <li><a href="#">Produit</a></li>
             {% if app.user %}
-              {{ app.user}}
+              <li><a href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
             {% else %}
               <li><a href="/login">Connexion</a></li>
+              <li><a href="/registration">Inscription</a></li>
             {% endif %}
-            <li><a href="/registration">Inscription</a></li>
+            
         </ul>
       <ul id="slide-out" class="sidenav">
           <li><div class="">
@@ -37,12 +39,13 @@
           </div></li>
           <li><a href="#"><i class="material-icons">account_circle</i></a></li>
             {% if app.user %}
-              {{ app.user}}
+              <li><a href="/client"> {{ app.user}} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
             {% else %}
               <li><a href="/login">Connexion</a></li>
+              <li><a href="/registration">Inscription</a></li>
             {% endif %}
-            <li><a href="/registration">Inscription</a></li>
+
             <li><div class="divider"></div></li>
             <li><a href="#">Catégorie</a></li>
             <li><a href="#">Produit</a></li>

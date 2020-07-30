@@ -15,10 +15,11 @@ class IndexController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $produitsRetour = $em->getRepository(Affaires::class)->findAll();
+        $produitsRetour = $em->getRepository(Affaires::class)->findBy([], ['id' => 'DESC'], 5 );
 
         return $this->render('index/index.html.twig', [
             'produitsRetour' => $produitsRetour,
         ]);
     }
 }
+
