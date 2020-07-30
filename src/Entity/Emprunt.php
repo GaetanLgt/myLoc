@@ -98,29 +98,6 @@ class Emprunt
         return $this->affaires;
     }
 
-    public function addAffaire(Affaires $affaire): self
-    {
-        if (!$this->affaires->contains($affaire)) {
-            $this->affaires[] = $affaire;
-            $affaire->setEmprunt($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAffaire(Affaires $affaire): self
-    {
-        if ($this->affaires->contains($affaire)) {
-            $this->affaires->removeElement($affaire);
-            // set the owning side to null (unless already changed)
-            if ($affaire->getEmprunt() === $this) {
-                $affaire->setEmprunt(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getAffaire(): ?Affaires
     {
         return $this->affaire;
