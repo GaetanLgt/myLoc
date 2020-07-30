@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+{{categorie.name}}
+
+                {% for produit in produitsCat %}
+                <p>{{ produit.name }}</p>
+                <p>{{ produit.proprietaire }}</p>
+                <p>{{ produit.description }}</p>
+                <p>{{ produit.nbpts}}</p>
+                {% endfor %}
+{% endblock %}
