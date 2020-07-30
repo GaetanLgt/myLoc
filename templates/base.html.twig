@@ -23,7 +23,7 @@
           <li><a href="#">Catégorie</a></li>
           <li><a href="#">Produit</a></li>
             {% if app.user %}
-              <li><a href="/client"> {{ app.user}} </a></li>
+              <li><a href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
             {% else %}
               <li><a href="/login">Connexion</a></li>
@@ -39,7 +39,7 @@
           </div></li>
           <li><a href="#"><i class="material-icons">account_circle</i></a></li>
             {% if app.user %}
-              <li><a href="/client"> {{ app.user}} </a></li>
+              <li><a href="/client/{{ app.user.id }}"> {{ app.user }} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
             {% else %}
               <li><a href="/login">Connexion</a></li>

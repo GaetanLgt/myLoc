@@ -1,23 +1,29 @@
 <?php
 
 namespace App\Controller;
+
+use App\Entity\Affaires;
 use App\Entity\User;
+use App\Entity\Emprunt;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ClientController extends AbstractController
 {
     /**
-     * @Route("/client", name="client")
+     * @Route("/client/{id}", name="client")
      */
-    public function index()
+    public function index($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $clientUser = $em->getRepository(User::class)->findAll();
+        $clientUser = $em->getRepository(User::class)->find($id);
+        $produitsClient = $clientUser->getAffaires();
+        $empruntsClient = $clientUser->getEmprunts();
 
         return $this->render('client/index.html.twig', [
             'clientUser' => $clientUser,
+            'produitsClient' => $produitsClient,
         ]);
     }
 }

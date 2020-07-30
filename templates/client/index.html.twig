@@ -19,10 +19,13 @@
     <div class="col s6">
         <h6 class="mt-5 pb-2 text-center deep-orange-text">Vos produits publié</h6>
             <div class="hoverable lime lighten-1 rounded">
-                <p class="pt-3 ml-3">Nom: {{ app.user.firstname}}</p>
-                <p class="ml-3">Prénom: {{ app.user.lastname}}</p>
-                <p class="ml-3">Email: {{ app.user.email}}</p>
-                <p class="pb-3 ml-3">Nombre de points: {{ app.user.totalpts}}</p>
+                {% for produit in produitsClient %}
+                <p>{{ produit.name }}</p>
+                <p>{{ produit.proprietaire }}</p>
+                <p>{{ produit.categorie }}</p>
+                <p>{{ produit.description }}</p>
+                <p>{{ produit.nbpts}}</p>
+                {% endfor %}
             </div>
     </div>
     </div>
