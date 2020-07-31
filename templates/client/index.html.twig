@@ -44,7 +44,11 @@
     <div class="col s6">
         <h6 class="mt-5 pb-2 text-center deep-orange-text">?</h6>
             <div class="hoverable orange lighten-4 rounded">
-                
+            {{ form(form) }}
+                    <div class="input-field">
+                    {{ form_row(form.categorie)}}
+                    </div>
+            {{ form_end(form) }}
             </div>
     </div>
     </div>
