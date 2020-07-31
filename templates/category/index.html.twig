@@ -3,12 +3,28 @@
 {% block title %}Hello CategoryController!{% endblock %}
 
 {% block body %}
-{{cat.name}}
+<h3 class="text-center">{{cat.name}}</h3>
+<div class="container container-fluid p-3">
+    <div class="row">
 
-                {% for produit in produitsCat %}
-                <p>{{ produit.name }}</p>
-                <p>{{ produit.proprietaire }}</p>
-                <p>{{ produit.description }}</p>
-                <p>{{ produit.nbpts}}</p>
-                {% endfor %}
+{% for produit in produitsCat %}
+        <div class="col-lg-4 mb-4">
+        <div class="card h-100 ">
+            <img class="p-3 rounded img-fluid materialboxed" width="650" src="/images/affaires/{{ produit.imageName }} ">
+                <div class="card-body">
+                    <p class="card-title">
+                    <p class="text-center">{{ produit.name }}</p>
+                    <p>Auteur: {{ produit.proprietaire }}</p>
+                    <p>Nombre de points : {{ produit.nbpts}}</p>
+                    <p class="card-text">Description : {{ produit.description|slice(0,100) }}...</p>
+                    </p>
+                    <a href="" class="btn btn-block btn-primary text-uppercase">Button</a>
+                </div>
+        </div>  
+        </div>
+        
+
+{% endfor %}
+</div>
+</div>
 {% endblock %}
