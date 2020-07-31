@@ -3,15 +3,42 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-  <div class="container">
-    <div class="container border mt-5 mb-5 pt-3">
-      {{form_start(form) }}
-      {{form_row(form.lastname, {'label': 'Nom '}) }}
-      {{form_row(form.firstname, {'label': 'Prenom'}) }}
-      {{form_row(form.email, {'label': 'Votre email'}) }}
-      {{form_row(form.password, {'label': 'Votre mot de passe'}) }}
-      {{form_row(form.connexion, {'label': 'Sinscrire', 'attr': {'class':"btn btn-primary"}}) }}
-      {{form_end(form) }}
-    </div>
-  </div>
+
+<div class="bg-inscript">
+<div class="container">
+          <div class="row bg-inscription mt-5 mb-5 rounded">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4 text-center">Inscription</h3>
+
+              {{form_start(form) }}
+              
+                <div class="input-field">
+                    {{form_row(form.lastname, {'label': 'Nom',  'attr': {'class':"input-field blue-text text-darken-2"}}) }} 
+                </div>
+
+                <div class="input-field">
+                    {{form_row(form.firstname, {'label': 'Prenom'}) }}
+                </div>
+
+                <div class="input-field">
+                    {{form_row(form.email, {'label': 'Votre email'}) }}
+                </div>
+
+                <div class="input-field">
+                    {{form_row(form.password, {'label': 'Votre mot de passe'}) }}
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+
+                {{form_row(form.connexion, {'label': 'Sinscrire', 'attr': {'class':"mb-3 btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"}}) }}
+                {{form_end(form) }}
+              </form>
+            </div>
+          </div>
+        </div>
+</div>
+  
 {% endblock %}

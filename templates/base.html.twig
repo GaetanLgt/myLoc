@@ -20,6 +20,7 @@
   <div class="nav-wrapper deep-orange">
       <a href="" class="ml-4 blue lighten-4"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Accueil</a></li>
           <!-- Dropdown Trigger -->
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Catégories<i class="material-icons right"></i></a></li>
             <ul id="dropdown1" class="dropdown-content">
@@ -51,7 +52,7 @@
               <li><a href="/client/{{ app.user.id }}"> {{ app.user }} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
             {% else %}
-              <li><a href="/login/index">Connexion</a></li>
+              <li><a href="/login">Connexion</a></li>
               <li><a href="/registration">Inscription</a></li>
             {% endif %}
 

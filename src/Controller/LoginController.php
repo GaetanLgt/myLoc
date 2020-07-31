@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\LoginType;
+use App\Entity\Category;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,6 +22,9 @@ class LoginController extends AbstractController
         $form = $this->createForm(LoginType::class, $user);
         $form->handleRequest($request);
 
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository(Category::class)->findAll();
+
         if($form->isSubmitted() && $form->isValid()){
             $hash = $encoder->encodePassword($user, $user->getPassword());
 
@@ -34,6 +38,7 @@ class LoginController extends AbstractController
 
         return $this->render('login/index.html.twig', [
             'form' => $form->createView(),
+            'categories' => $categories,
         ]);
     }
     
@@ -42,7 +47,12 @@ class LoginController extends AbstractController
      */
     public function login()
     {
-        return $this->render('login/login.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository(Category::class)->findAll();
+        
+        return $this->render('login/login.html.twig',[
+            'categories' => $categories,  
+        ]);
     }
 
     /**
