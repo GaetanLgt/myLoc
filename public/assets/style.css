@@ -142,7 +142,7 @@ main {
 }
 
 .bg-inscript {
-  background-image: url('https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?cs=srgb&dl=pexels-negative-space-169573.jpg&fm=jpg');
+  background-image: url('/assets/img/pexels-negative-space-169573.jpg');
   background-size: cover;
   background-position: center;
 }
