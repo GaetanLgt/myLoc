@@ -1,28 +1,27 @@
 <?php
- 
+
 namespace App\Controller;
 
+use App\Entity\Affaires;
 use App\Entity\Category;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class CategoryController extends AbstractController
+class ProduitController extends AbstractController
 {
     /**
-     * @Route("/category/{id}", name="category")
+     * @Route("/produit/{id}", name="produit")
      */
     public function index($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categorie = $em->getRepository(Category::class)->find($id);
-        $produitsCat = $categorie->getAffaires();
+        $produit = $em->getRepository(Affaires::class)->find($id);
         $categories = $em->getRepository(Category::class)->findAll();
 
-        
-        return $this->render('category/index.html.twig', [
-            'cat' => $categorie,
-            'produitsCat'=> $produitsCat,
+
+        return $this->render('produit/index.html.twig', [
+            'produit' => $produit,
             'categories' => $categories,
         ]);
     }
