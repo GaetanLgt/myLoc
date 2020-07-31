@@ -16,7 +16,7 @@ class IndexController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $produitsRetour = $em->getRepository(Affaires::class)->findBy([], ['id' => 'DESC'], 5);
+        $produitsRetour = $em->getRepository(Affaires::class)->findBy([], ['id' => 'DESC'], 6);
         $categories = $em->getRepository(Category::class)->findAll();
 
         return $this->render('index/index.html.twig', [

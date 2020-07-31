@@ -27,7 +27,6 @@ main {
   flex: 1 0 auto;
 }
 
-<<<<<<< HEAD
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
@@ -150,8 +149,8 @@ main {
 .bg-inscription {
   background-color: white;
   opacity: 0.70;
-=======
-select {
-  display: block !important;
->>>>>>> d625ba784199937d51b314efd7a888a7107a2f51
+}
+img {
+  width: 300px;
+  height: 300px;
 }
