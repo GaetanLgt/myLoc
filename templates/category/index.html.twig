@@ -3,7 +3,7 @@
 {% block title %}Hello CategoryController!{% endblock %}
 
 {% block body %}
-<h3 class="text-center">{{cat.name}}</h3>
+<h3 class="text-center titlec mt-5">{{cat.name}}</h3>
 <div class="container container-fluid p-3">
     <div class="row">
 
@@ -13,10 +13,10 @@
             <img class="p-3 rounded img-fluid materialboxed" width="650" src="/images/affaires/{{ produit.imageName }} ">
                 <div class="card-body">
                     <p class="card-title">
-                    <p class="text-center">{{ produit.name }}</p>
-                    <p>Auteur: {{ produit.proprietaire }}</p>
-                    <p>Nombre de points : {{ produit.nbpts}}</p>
-                    <p class="card-text">Description : {{ produit.description|slice(0,100) }}...</p>
+                    <p class="fonttitle text-center">{{ produit.name }}</p>
+                    <p><i class="fonttext">Auteur:</i> {{ produit.proprietaire }}</p>
+                    <p><i class="fonttext">Nombre de points :</i> {{ produit.nbpts}}</p>
+                    <p class="card-text"><i class="fonttext">Description :</i> <i class="fontdes">{{ produit.description|slice(0,100) }}...</i></p>
                     </p>
                     <a href="" class="btn btn-block btn-primary text-uppercase">Button</a>
                 </div>

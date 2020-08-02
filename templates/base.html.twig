@@ -14,13 +14,17 @@
             <link rel="stylesheet" href="../assets/style.css">
             <!-- Animate -->
             <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+            <!-- Google Icon -->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+            <!-- AniCollection -->
+            <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
         {% endblock %}
         
     </head>
 
   <nav> 
-  <div class="nav-wrapper deep-orange">
-      <a href="" class="ml-4 blue lighten-4"></a>
+  <div class="nav-wrapper teal lighten-1 z-depth-3">
+      <a href="" class="ml-5 logoheader ">LOGO</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/">Accueil</a></li>
           <!-- Dropdown Trigger -->
@@ -50,6 +54,8 @@
             <a href="#email"><span class="white-text email"></span></a>
           </div></li>
           <li><a href="#"><i class="material-icons">account_circle</i></a></li>
+          <li><a href="./">Accueil</a></li>
+          <li><div class="divider"></div></li>
             {% if app.user %}
               <li><a href="/client/{{ app.user.id }}"> {{ app.user }} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
@@ -68,7 +74,6 @@
               {% endfor %}
 
             </ul>
-            <li><a href="./">Accueil</a></li>
             <li><a href="#">Produit</a></li>
             <li><div class="divider"></div></li>
             <li><a class="subheader"></a></li>
@@ -83,33 +88,6 @@
 
         {% endblock %}
 
-        {% block footer %}
-                <footer class="page-footer deep-orange">
-          <div class="container">
-            <div class="row">
-              <div class="col s12">
-                <h5 class="white-text">Footer Test</h5>
-                <p class="grey-text text-lighten-4">Stiv la petit pute</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Liens</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Lien 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Lien 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Lien 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Lien 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2020
-            <a class="grey-text text-lighten-4 right" href="#!">TEST</a>
-            </div>
-          </div>
-        </footer>
-            {% endblock %}
 
         {% block javascripts %}
             <!-- JS, Popper.js, and jQuery -->
@@ -119,5 +97,11 @@
             <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             <script type="text/javascript" src="/assets/js/script.js"></script>
+            !-- AniJS core library -->
+            <script src="https://anijs.github.io/lib/anijs/anijs-min.js"></script>
+            <!-- Include to use $addClass, $toggleClass or $removeClass -->
+            <script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js"></script>
+            <!-- The scrollreveal helper -->
+            <script src="https://anijs.github.io/lib/anijs/helpers/scrollreveal/anijs-helper-scrollreveal-min.js"></script>
         {% endblock %}
 
