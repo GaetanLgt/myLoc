@@ -5,30 +5,30 @@
 {% block body %}
 <div class="">
   <div class="row">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image rounded"></div>
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image rounded z-depth-3"></div>
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-5">Connexion</h3>
+              <h3 class="login-heading titlec mb-5 ">Connexion</h3>
               <form action="{{ path('login') }}" method="post">
 
-                <div class="input-field">
+                <div class="input-field titlec">
                     <i class="material-icons prefix">account_circle</i>
-                    <input name="_username" type="email" id="inputEmail" class="form-control validate" placeholder="Email address" required autofocus>
-                    <label data-error="wrong" data-success="right" for="exampleInputEmail1">Email address</label>
+                    <input name="_username" type="email" id="inputEmail" class="form-control validate" required autofocus>
+                    <label data-error="wrong" data-success="right" for="exampleInputEmail1">Email</label>
                 </div>
 
-                <div class="input-field">
+                <div class="input-field titlec">
                 <i class="material-icons prefix">lock</i>
-                  <input name="_password" type="password" id="inputPassword" class="form-control validate" placeholder="Password" required>
-                  <label data-error="wrong" data-success="right" for="exampleInputPassword1">Password</label>
+                  <input name="_password" type="password" id="inputPassword" class="form-control validate" required>
+                  <label data-error="wrong" data-success="right" for="exampleInputPassword1">Mot de passe</label>
                 </div>
 
                 <div class="custom-control custom-checkbox mb-3">
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                  <label class="custom-control-label" for="customCheck1">Envoyer mot de passe</label>
                 </div>
                 <button class="btn waves-effect waves-light btn-block text-uppercase font-weight-bold mb-2" type="submit" name="action">Connexion
                   <i class="material-icons right">done</i>
@@ -41,6 +41,5 @@
     </div>
   </div>
 </div>
-<li><div class="divider"></div></li>
 {% endblock %}
 

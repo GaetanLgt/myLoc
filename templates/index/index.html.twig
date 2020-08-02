@@ -3,7 +3,6 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-
 <!-- BLOC 1 -->
   <header class="masthead d-flex z-depth-3">
     <div class="container text-center my-auto">
@@ -34,7 +33,7 @@
       <div class="content-section-heading">
         <h2 class="text-secondary mb-0">Soyez Prêt</h2>
         <h3 class="mb-5">Prêter, emprunter, donner... on fait ça tous les jours.
-Et si nous rendions cette activité encore plus avantageuse ?</h3>
+                        SEt si nous rendions cette activité encore plus avantageuse ?</h3>
       </div>
       <div class="row stage">
         <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 box2 bounce-2">
@@ -108,19 +107,19 @@ Et si nous rendions cette activité encore plus avantageuse ?</h3>
     <div class="container container-fluid">
     <div class="row ">
     {% for produitRetour in produitsRetour %}
-      <div class="col-lg-3 mb-4 mt-5 ">
+      <div class="col-lg-4 mb-4 mt-5 ">
         <div class="card h-100 ">
           <div class="card-body">
             <h5 class="fonttitle card-title text-muted text-uppercase text-center">{{ produitRetour.name }}</h5>
             <img class="img-fluid materialboxed" width="650" src="images/affaires/{{ produitRetour.imageName }} ">
             
             <ul class="fa-ul mt-3">
-              <li><span class="fa-li"><i class=" fas fa-check"></i></span><i class="fonttext">Nom :</i>  {{ produitRetour.proprietaire }}</strong></li>
+              <li><span class="fa-li"><i class=" fas fa-check"></i></span><i class="fonttext">Nom :</i>  {{ produitRetour.proprietaire }}</li>
               <li><span class="fa-li"><i class="fas fa-check"></i></span><i class="fonttext">Categorie:</i> {{ produitRetour.categorie }}</li>
               <li><span class="fa-li"><i class="fas fa-check"></i></span><i class="fonttext">Nombre de points :</i>  {{ produitRetour.nbpts }}</li>
-              <li class="mt-3"><span class="fa-li"><i class="fas fa-check"></i></span><i class="fonttext">Description:</i>  <i class="fontdes">{{ produitRetour.description|slice(0,130) }}...</i></li>
+              <li class="mt-3"><span class="fa-li"><i class="fas fa-check"></i></span><i class="fonttext">Description:</i><i class="fontdes">{{ produitRetour.description|slice(0,150) }}...</i></li>
             </ul>
-            <a href="#" class="btn btn-block btn-primary text-uppercase">Emprunter</a>
+            <a href="#" class=" btn btn-block btn-primary text-uppercase">Emprunter</a>
             </div>
         </div>
       </div>
@@ -152,7 +151,7 @@ Et si nous rendions cette activité encore plus avantageuse ?</h3>
   <!-- BLOC 7 -->
   <footer class="footer text-center">
     <div class="container">
-      <ul class="list-inline ">
+      <ul class="list-inline spinner  ">
         <li class="list-inline-item">
           <a class="social-link teal lighten-1 rounded-circle text-white" href="#!">
             <img class="mb-2"src="https://img.icons8.com/ios/25/000000/google-logo.png"/>
@@ -165,7 +164,7 @@ Et si nous rendions cette activité encore plus avantageuse ?</h3>
         </li>
         <li class="list-inline-item">
           <a class="social-link teal lighten-1 rounded-circle text-white" href="#!">
-            <img class="mb-2"src="https://img.icons8.com/ios/25/000000/twitter.png"/>
+            <img class="mb-2 "src="https://img.icons8.com/ios/25/000000/twitter.png"/>
           </a>
         </li>
       </ul>

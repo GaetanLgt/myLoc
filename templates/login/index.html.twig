@@ -3,42 +3,29 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-
-<div class="bg-inscript img-flui">
-<div class="container">
-          <div class="row bg-inscription mt-5 mb-5 rounded">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4 text-center">Inscription</h3>
-
+<div class="">
+  <div class="row">
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-lg-10 mx-auto ">
+              <h3 class="titlec mb-3 text-center ">Inscription</h3>
               {{form_start(form) }}
-              
-                <div class="input-field">
-                    {{form_row(form.lastname, {'label': 'Nom',  'attr': {'class':"input-field blue-text text-darken-2"}}) }} 
-                </div>
-
-                <div class="input-field">
-                    {{form_row(form.firstname, {'label': 'Prenom'}) }}
-                </div>
-
-                <div class="input-field">
-                    {{form_row(form.email, {'label': 'Votre email'}) }}
-                </div>
-
-                <div class="input-field">
-                    {{form_row(form.password, {'label': 'Votre mot de passe'}) }}
-                </div>
-
-                <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Remember password</label>
-                </div>
-
-                {{form_row(form.connexion, {'label': 'Sinscrire', 'attr': {'class':"btn waves-effect waves-light btn btn-block text-uppercase font-weight-bold mb-3"}}) }}
-                {{form_end(form) }}
-              </form>
+              {{form_row(form.lastname, {'label': 'Nom', 'label_attr': {'class':"input-field titlec  "},   'attr': {'class':"form-control validate"}}) }} 
+              {{form_row(form.firstname, {'label': 'Prenom', 'label_attr': {'class':"titlec"},   'attr': {'class':"form-control validate"}}) }}
+              {{form_row(form.email, {'label': 'Votre email', 'label_attr': {'class':"titlec"},   'attr': {'class':"form-control validate"}}) }}
+              {{form_row(form.password, {'label': 'Votre mot de passe', 'label_attr': {'class':"titlec"},   'attr': {'class':"form-control validate"}}) }}
+              {{form_row(form.connexion, {'label': 'Sinscrire', 'attr': {'class':"mt-3 btn waves-effect waves-light btn btn-block text-uppercase font-weight-bold mb-3"}}) }}
+              {{form_end(form) }}
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image2 z-depth-3 rounded"></div>
+  </div>
 </div>
+
   
 {% endblock %}

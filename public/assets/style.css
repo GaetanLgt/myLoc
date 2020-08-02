@@ -35,7 +35,8 @@
   font-style: normal;
 }
 .titlec {
-  font-family: robotoCondensed-bolditalic;
+  text-transform: uppercase;
+  font-family: roboto_condensedregular;
 }
 .fonttext {
     font-family: roboto_condensedregular;
@@ -82,6 +83,12 @@ main {
 
 .bg-image {
   background-image: url('https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: -43px;
+}
+.bg-image2 {
+  background-image: url('https://images.pexels.com/photos/4050220/pexels-photo-4050220.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
   background-size: cover;
   background-position: center;
   margin-bottom: -43px;

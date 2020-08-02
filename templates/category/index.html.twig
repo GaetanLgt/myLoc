@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategoryController!{% endblock %}
+{% block title %}{{cat.name}}{% endblock %}
 
 {% block body %}
-<h3 class="text-center titlec mt-5">{{cat.name}}</h3>
+<h3 class="text-center text-secondary titlec mt-5">{{cat.name}}</h3>
 <div class="container container-fluid p-3">
     <div class="row">
-
 {% for produit in produitsCat %}
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-4 mb-4 animate__animated animate__fadeInUp">
         <div class="card h-100 ">
             <img class="p-3 rounded img-fluid materialboxed" width="650" src="/images/affaires/{{ produit.imageName }} ">
                 <div class="card-body">
                     <p class="card-title">
                     <p class="fonttitle text-center">{{ produit.name }}</p>
-                    <p><i class="fonttext">Auteur:</i> {{ produit.proprietaire }}</p>
+                    <span><i class="fonttext">Auteur:</i> {{ produit.proprietaire }}</i><span>
                     <p><i class="fonttext">Nombre de points :</i> {{ produit.nbpts}}</p>
                     <p class="card-text"><i class="fonttext">Description :</i> <i class="fontdes">{{ produit.description|slice(0,100) }}...</i></p>
                     </p>
@@ -22,8 +21,6 @@
                 </div>
         </div>  
         </div>
-        
-
 {% endfor %}
 </div>
 </div>

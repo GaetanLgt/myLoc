@@ -3,57 +3,55 @@
 {% block title %}Administration Utilisateur{% endblock %}
 
 {% block body %}
-
+<body class="bg-light">
+    
+<h5 class="fonttext mt-5 amber lighten-2 mx-auto p-2 rounded z-depth-2" >Bonjour {{ app.user.lastname}} {{ app.user.firstname}}</h5>
 
 {% if app.user %}
-    <div class="container">
+    <div class="">
     <div class="row">
-    <div class="col s6">
-        <h6 class="mt-5 pb-2 text-center deep-orange-text">Gérer les informations de votre compte</h6>
+    <div class="col-4">
+        <h6 class="fontdes mb-3 mt-5 amber lighten-2 mx-auto p-2 rounded z-depth-2">Gérer les informations de votre compte</h6>
             <div class="hoverable lime lighten-1 rounded">
-                <p class="pt-3 ml-3">Nom: {{ app.user.firstname}}</p>
-                <p class="ml-3">Prénom: {{ app.user.lastname}}</p>
-                <p class="ml-3">Email: {{ app.user.email}}</p>
-                <p class="pb-3 ml-3">Nombre de points: {{ app.user.totalpts}}</p>
+                <p class="pt-3 ml-3"><a class="fonttext ">Nom:</a> <a class="fontdes">{{ app.user.firstname}}</a></p>
+                <p class="ml-3"><a class="fonttext ">Prénom:</a> <a class="fontdes">{{ app.user.lastname}}</a></p>
+                <p class="ml-3"><a class="fonttext ">Email:</a> <a class="fontdes">{{ app.user.email}}</a></p>
+                <p class="pb-3 ml-3"><a class="fonttext ">Points disponible:</a> <a class="fontdes">{{ app.user.totalpts}}</a></p>
             </div>
-    </div>
-    <div class="col s6">
-        <h6 class="mt-5 pb-2 text-center deep-orange-text">Vos produits publié</h6>
+            <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Vos produits publié</h6>
             <div class="hoverable lime lighten-1 rounded">
                 {% for produit in produitsClient %}
-                <p>{{ produit.name }}</p>
-                <p>{{ produit.proprietaire }}</p>
-                <p>{{ produit.categorie }}</p>
-                <p>{{ produit.description }}</p>
-                <p>{{ produit.nbpts}}</p>
+                <div class="pt-3 ml-3"><a class="fonttext ">Titre:</a> <a class="fontdes">{{ produit.name }}</a></div>
+                <div class="ml-3"><a class="fonttext ">Auteur:</a> <a class="fontdes"> {{ produit.proprietaire }}</a></div>
+                <div class="ml-3"><a class="fonttext ">Type:</a> <a class="fontdes">{{ produit.categorie }}</a></div>
+                <div class="ml-3 mt-2"><a class="fonttext ">Description:</a> <a class="fontdes">  {{ produit.description|slice(0,150) }}</a></div>
+                <div class="ml-3 mb-4"><a class="fonttext ">Nombre de points:</a> <a class="fontdes">  {{ produit.nbpts}}</a></div>
                 {% endfor %}
             </div>
     </div>
-    </div>
-    </div>
-    <div class="container">
-    <div class="row">
-    <div class="col s6">
-        <h6 class="mt-5 pb-2 text-center deep-orange-text">Vos produits empruntés</h6>
-            <div class="hoverable lime lighten-1 rounded">
-                <p class="ml-3">Nom: {{ app.user.firstname}}</p>
-                <p class="ml-3">Prénom: {{ app.user.lastname}}</p>
-                <p class="ml-3">Email: {{ app.user.email}}</p>
-                <p class="pb-3 ml-3">Nombre de points: {{ app.user.totalpts}}</p>
-            </div>
-    </div>
-    <div class="col s6">
-        <h6 class="mt-5 pb-2 text-center deep-orange-text">?</h6>
-            <div class="hoverable orange lighten-4 rounded">
+    <div class="col s8">
+        <h6 class="fontdes mt-5 mb-3 amber lighten-2 mx-auto p-2 rounded z-depth-2">Publié un produit</h6>
+            <div class="row">
+            <div class="col 12">
+            <div class="hoverable orange lighten-4 rounded p-4 rounded">
             {{ form(form) }}
                     <div class="input-field">
                     {{ form_row(form.categorie)}}
                     </div>
             {{ form_end(form) }}
             </div>
+            </div>
+            </div>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    
     </div>
     </div>
     </div>       
 {% endif %}
-
+</body>
 {% endblock %}
+
