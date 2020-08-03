@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -54,6 +55,11 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity=Affaires::class, mappedBy="proprietaire")
      */
     private $affaires;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $role;
 
     public function __construct()
     {
@@ -205,12 +211,26 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        $role = $this->role;
+        return preg_split("/[,]+/",$role);
     }
 
     public function __toString()
     {
         return $this->lastname.' '.$this->firstname;
+    }
+
+    public function getRole(): ?array
+    {
+        $role = array($this->role);
+        return $role;
+    }
+
+    public function setRole(string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
     }
 }
 
