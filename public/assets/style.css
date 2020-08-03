@@ -57,9 +57,10 @@ li a{
   text-transform: uppercase;
   font-family: roboto_condensedregular;
 }
-.logoheader {
-  text-transform: uppercase;
+.brand-logo{
   font-family: roboto_condensedregular;
+    font-size: 1.5rem !important;
+
 }
 body {
   display: flex;
