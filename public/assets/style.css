@@ -34,6 +34,50 @@
   font-weight: normal;
   font-style: normal;
 }
+.imageSize{
+  height: 300px;
+  width: 400px;
+}
+.imageSize1{
+  height: 400px;
+  width: 400px;
+}
+@media screen and (min-width: 200px) and (max-width: 800px) {
+  .imageSize{
+    height: auto;
+    width: auto;
+  }
+  .imageSize1 {
+    height: auto;
+    width: auto;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 800px) {
+  .descriptSize{
+    height: 60px;
+    width: 60px;
+  }
+  .descriptSize1{
+    height: 100px;
+    width: 100px;
+  }
+}
+.descriptSize{
+  height: 150px;
+  width: auto;
+}
+.descriptSize1{
+  height: 150px;
+  width: auto;
+}
+.buttonSize{
+  height: auto;
+  width: 150px;
+}
+.buttonSize1{
+  height: 10px;
+  width: 50px;
+}
 .titlec {
   text-transform: uppercase;
   font-family: roboto_condensedregular;
@@ -57,9 +101,10 @@ li a{
   text-transform: uppercase;
   font-family: roboto_condensedregular;
 }
-.logoheader {
-  text-transform: uppercase;
+.brand-logo{
   font-family: roboto_condensedregular;
+  font-size: 1.5rem !important;
+
 }
 body {
   display: flex;

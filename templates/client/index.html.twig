@@ -19,10 +19,9 @@
                 <p class="pb-3 ml-3"><a class="fonttext ">Points disponible:</a> <a class="fontdes">{{ app.user.totalpts}}</a></p>
             </div>
             <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Vos produits publié</h6>
-            
-           
-    {% for produit in produitsClient %}
-                
+     <div class="row">
+     <div class="col-sm-12">      
+    {% for produit in produitsClient %}        
     <ul class="collapsible mb-0">
         <li>
         <div class="collapsible-header"><i class="material-icons">web_asset</i><a class="fonttext "></a> <a class="fontdes">{{ produit.name }}</a></div>
@@ -31,9 +30,9 @@
         <div class="collapsible-body"><span><a class="fonttext ">Description:</a> <a class="fontdes">  {{ produit.description}}</a></span></div>
         </li>
     </ul>
-                
-                {% endfor %}
-            
+    {% endfor %}
+    </div>
+    </div>
     </div>
     <div class="col s8">
         <h6 class="fontdes mt-5 mb-3 amber lighten-2 mx-auto p-2 rounded z-depth-2">Publié un produit</h6>
@@ -49,7 +48,7 @@
                     {{ form_row(form.proprietaire, {'label': 'Proprietaire', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"validate"}}) }}
                     {{ form_row(form.nbPts, {'label': 'Nombre de points', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"validate"}}) }}
                     {{ form_row(form.imageFile, {'label': 'Ajouter une image', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':""}}) }}
-                    {{ form_row(form.enregister, {'label': 'Enregister', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"mt-2 btn btn-primary text-uppercase "}}) }}
+                    {{ form_row(form.enregister, {'label': 'Enregister', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"mt-2 btn waves-effect waves-orange text-uppercase "}}) }}
                     
             {{ form_end(form) }}
             </div>
