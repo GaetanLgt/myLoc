@@ -3,30 +3,176 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-<div class="container container-fluid">
-    <div class="row">
-    {% for produitRetour in produitsRetour %}
+<!-- BLOC 1 -->
+  <header class="masthead d-flex z-depth-3">
+    <div class="container text-center my-auto">
+      <h1 class="animate__animated animate__backInRight mb-1">Prêt et don d’objets, 100% gratuit</h1>
+      <h3 class="animate__animated animate__backInLeft mb-5">
+        <em>Économisez, découvrez et partagez avec votre entourage.</em>
+      </h3>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Découvrir</a>
+    </div>
+    <div class="overlay"></div>
+  </header>
 
-      <!-- Free Tier -->
-      <div class="col-sm-4">
-        <div class="card mb-5 mb-lg-0">
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>+ de 8 000 objets</h2>
+          <p class="lead mb-5">Une bonne partie de ce qu'on possède est largement sous-utilisée. Avant d'acheter, ??? propose une alternative économique et conviviale.
+            Essayez, c'est gratuit et sans publicité !</p>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="/registration">Je m'inscris</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- BLOC 2 -->
+  <section class="content-section teal lighten-1 text-white text-center z-depth-3" id="services">
+    <div class="container">
+      <div class="content-section-heading">
+        <h2 class="text-secondary mb-0">Soyez Prêt</h2>
+        <h3 class="mb-5">Prêter, emprunter, donner... on fait ça tous les jours.
+                        SEt si nous rendions cette activité encore plus avantageuse ?</h3>
+      </div>
+      <div class="row stage">
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 box2 bounce-2">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="p-4 mr-5 medium material-icons">euro_symbol</i>
+          </span>
+          <h4>
+            <strong>Économique</strong>
+          </h4>
+          <p class="text-faded mb-0">N'achetez pas ce que vos proches peuvent vous prêter ou vous donner , économisez ensemble.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 box3 bounce-3">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="p-4 mr-5 medium material-icons">lock_outline</i>
+          </span>
+          <h4>
+            <strong>Sécurisé</strong>
+          </h4>
+          <p class="text-faded mb-0">Vos objets ne sont accessibles qu'auprès de vos cercles de confiance (famille, amis, voisins...).</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0 box4 bounce-4">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="p-4 mr-5 medium  material-icons">collections</i>
+          </span>
+          <h4>
+            <strong>Organisé</strong>
+          </h4>
+          <p class="text-faded mb-0">D'un coup d'oeil, retrouvez vos objets prêtés, ceux que vous empruntez et ceux qu'on doit vous rendre.
+            <i class="fas fa-heart"></i>
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-6 box5 bounce-5">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="p-4 mr-5 medium  material-icons">accessibility</i>
+          </span>
+          <h4>
+            <strong>Zen</strong>
+          </h4>
+          <p class="text-faded mb-0">On doit vous rendre un objet demain ? Son emprunteur et vous serez automatiquement prévenus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Achetez l'essentiel, empruntez tout le reste</h2>
+          <p class="lead mb-5">Prêter ou donner ses objets sous-utilisés, et emprunter ou récupérer ceux qui nous manquent pour un besoin ponctuel, tout le monde y gagne !</p>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="/login">Je me connecte</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOC 3 -->
+  <section class="callout z-depth-3">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">Qui sommmes-nous?</h2>
+      <h3 class="mb-5">
+        <em class="blue-grey-text">??? est conçu intégralement par Gaëtan, Frederic et Stiv sans investisseur, sans argent, sans levée de fonds.</em>
+      </h3>
+      <h4 class="mb-3">Bien décidés à chambouler nos habitudes de consommation, les trois frères développent et améliorent depuis 2019 leur vision du "site idéal" pour démocratiser le prêt et le don d'objets.</h4>
+    </div>
+  </section>
+
+  <!-- BLOC 4 -->
+  <section class="content-section">
+  <h2 class="text-secondary mb-5 text-center ">LES DERNIERS AJOUTS</h2>
+    <div class="container container-fluid">
+    <div class="row ">
+    {% for produitRetour in produitsRetour %}
+      <div class="col-lg-4 mb-4 mt-5 ">
+        <div class="card h-100 ">
           <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center">{{ produitRetour.name }}</h5>
+            <h5 class="fonttitle card-title text-muted text-uppercase text-center">{{ produitRetour.name }}</h5>
             <img class="img-fluid materialboxed" width="650" src="images/affaires/{{ produitRetour.imageName }} ">
             
-            <ul class="fa-ul">
-              <li><span class="fa-li"><i class=" fas fa-check"></i></span><strong class="pt-5 mt-5">Nom : {{ produitRetour.proprietaire }}</strong></li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Categorie: {{ produitRetour.categorie }}</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Description: {{ produitRetour.description|slice(0,100) }}...</li>
-              <li><span class="fa-li"><i class="fas fa-check"></i></span>Nombre de points : {{ produitRetour.nbpts }}</li>
+            <ul class="fa-ul mt-3">
+              <li><span class="fa-li"><i class=" fas fa-check"></i></span><i class="fonttext">Nom :</i>  {{ produitRetour.proprietaire }}</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><i class="fonttext">Categorie:</i> {{ produitRetour.categorie }}</li>
+              <li><span class="fa-li"><i class="fas fa-check"></i></span><i class="fonttext">Nombre de points :</i>  {{ produitRetour.nbpts }}</li>
+              <li class="mt-3"><span class="fa-li"><i class="fas fa-check"></i></span><i class="fonttext">Description:</i><i class="fontdes">{{ produitRetour.description|slice(0,150) }}...</i></li>
             </ul>
-            <a href="/produit/{{ produitRetour.id }}" class="btn btn-block btn-primary text-uppercase">Button</a>
+            <a href="/produit/{{ produitRetour.id }}" class=" btn btn-block btn-primary text-uppercase">Emprunter</a>
             </div>
         </div>
       </div>
     {% endfor %}
     </div>
   </div>     
+  </div>
+  </div>
+  </section>
+
+  <!-- BLOC 5 -->
+  <section class="content-section teal lighten-1 text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">?</h2>
+      <a href="#!" class="btn btn-xl btn-light mr-4">?</a>
+      <a href="#!" class="btn btn-xl btn-dark">?</a>
+    </div>
+  </section>
+
+  <!-- BLOC 6 -->
+  <div id="contact" class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2779.9363180355986!2d1.2692330163646333!3d45.83255717910707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f9352a5df54383%3A0x203c4d16b2b0f682!2s24%20Rue%20Donzelot%2C%2087000%20Limoges!5e0!3m2!1sfr!2sfr!4v1596298715205!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <br />
+    <small>
+      <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2779.9363180355986!2d1.2692330163646333!3d45.83255717910707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f9352a5df54383%3A0x203c4d16b2b0f682!2s24%20Rue%20Donzelot%2C%2087000%20Limoges!5e0!3m2!1sfr!2sfr!4v1596298715205!5m2!1sfr!2sfr"></iframe>"></a>
+    </small>
+  </div>
+
+  <!-- BLOC 7 -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline spinner  ">
+        <li class="list-inline-item">
+          <a class="social-link teal lighten-1 rounded-circle text-white" href="#!">
+            <img class="mb-2"src="https://img.icons8.com/ios/25/000000/google-logo.png"/>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link teal lighten-1 rounded-circle text-white" href="#!">
+            <img class="mb-2"src="https://img.icons8.com/ios/25/000000/facebook.png"/>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link teal lighten-1 rounded-circle text-white" href="#!">
+            <img class="mb-2 "src="https://img.icons8.com/ios/25/000000/twitter.png"/>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small ">Copyright &copy; 2020</p>
+    </div>
+  </footer>
+</body>
+</html>
 {% endblock %}
 
         
