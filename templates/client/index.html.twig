@@ -12,27 +12,35 @@
     <div class="row">
     <div class="col-4">
         <h6 class="fontdes mb-3 mt-5 amber lighten-2 mx-auto p-2 rounded z-depth-2">Gérer les informations de votre compte</h6>
-            <div class="z-depth-2 teal lighten-3 rounded">
+            <div class="z-depth-2  rounded">
                 <p class="pt-3 ml-3"><a class="fonttext ">Nom:</a> <a class="fontdes">{{ app.user.firstname}}</a></p>
                 <p class="ml-3"><a class="fonttext ">Prénom:</a> <a class="fontdes">{{ app.user.lastname}}</a></p>
                 <p class="ml-3"><a class="fonttext ">Email:</a> <a class="fontdes">{{ app.user.email}}</a></p>
                 <p class="pb-3 ml-3"><a class="fonttext ">Points disponible:</a> <a class="fontdes">{{ app.user.totalpts}}</a></p>
             </div>
             <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Vos produits publié</h6>
-            <div class="z-depth-2 teal lighten-3 rounded">
-                {% for produit in produitsClient %}
-                <div class="pt-3 ml-3"><a class="fonttext ">Titre:</a> <a class="fontdes">{{ produit.name }}</a></div>
-                <div class="ml-3"><a class="fonttext ">Type:</a> <a class="fontdes">{{ produit.categorie }}</a></div>
+            
+           
+    {% for produit in produitsClient %}
                 
-                <div class="ml-3 mb-4"><a class="fonttext ">Nombre de points:</a> <a class="fontdes">  {{ produit.nbpts}}</a></div>
+    <ul class="collapsible mb-0">
+        <li>
+        <div class="collapsible-header"><i class="material-icons">web_asset</i><a class="fonttext "></a> <a class="fontdes">{{ produit.name }}</a></div>
+        <div class="collapsible-body"><span><a class="fonttext ">Type:</a> <a class="fontdes">{{ produit.categorie }}</a></span></div>
+        <div class="collapsible-body"><span><a class="fonttext ">Nombre de points:</a> <a class="fontdes">  {{ produit.nbpts}}</a></span></div>
+        <div class="collapsible-body"><span><a class="fonttext ">Description:</a> <a class="fontdes">  {{ produit.description}}</a></span></div>
+        </li>
+    </ul>
+                
                 {% endfor %}
-            </div>
+            
     </div>
     <div class="col s8">
         <h6 class="fontdes mt-5 mb-3 amber lighten-2 mx-auto p-2 rounded z-depth-2">Publié un produit</h6>
             <div class="row">
             <div class="col 12">
-            <div class="z-depth-2 teal lighten-3 rounded p-4 rounded">
+            <div class="z-depth-2 rounded p-4 rounded">
+            
             {{form_start(form) }}
                     
                     {{ form_row(form.name, {'label': 'Titre', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"validate"}}) }}
@@ -41,7 +49,7 @@
                     {{ form_row(form.proprietaire, {'label': 'Proprietaire', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"validate"}}) }}
                     {{ form_row(form.nbPts, {'label': 'Nombre de points', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"validate"}}) }}
                     {{ form_row(form.imageFile, {'label': 'Ajouter une image', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':""}}) }}
-                    {{ form_row(form.enregister, {'label': 'Enregister', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"mt-3 btn btn-primary text-uppercase "}}) }}
+                    {{ form_row(form.enregister, {'label': 'Enregister', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"mt-2 btn btn-primary text-uppercase "}}) }}
                     
             {{ form_end(form) }}
             </div>
@@ -55,8 +63,11 @@
     
     </div>
     </div>
-    </div>       
+    </div>
+        
 {% endif %}
+
+
 </body>
 {% endblock %}
 
