@@ -621,3 +621,18 @@ main {
   transform-origin: bottom;
   width: 200px;
 }
+[type="checkbox"].filled-in:checked + span:not(.lever):after {
+ 
+  top: 0;
+ 
+  width: 20px;
+ 
+  height: 20px;
+ 
+  border: 2px solid #e6ee9c;
+ 
+  background-color: #afb42b;
+ 
+  z-index: 0;
+ 
+}
