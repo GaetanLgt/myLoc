@@ -143,6 +143,9 @@ li a{
   text-transform: uppercase;
   font-family: roboto_condensedregular;
 }
+li a:hover{
+  color: #ffc107;
+}
 .brand-logo{
   font-family: roboto_condensedregular;
   font-size: 1.5rem !important;
@@ -806,10 +809,6 @@ main {
     background: #3bd80d;
   }
 }
-
-
-
-
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
   position: static ;
   opacity: 1 !important;
