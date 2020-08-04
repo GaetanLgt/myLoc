@@ -28,6 +28,12 @@
             </div>
             </div>
         </div>
+        {% for emprunt in emprunt %}
+            {% if ((emprunt.dateDebut|date("d/m/Y")) >= ("now"|date("d/m/Y"))) or ((emprunt.dateFin|date("d/m/Y")) <= ("now"|date("d/m/Y"))) %}
+            {{ (emprunt.dateDebut|date("d/m/Y")) }}
+            {{ (emprunt.dateFin|date("d/m/Y")) }}
+            {% endif %}
+        {% endfor %}
     </div>
 <div>
 
