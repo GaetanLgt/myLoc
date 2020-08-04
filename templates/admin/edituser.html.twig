@@ -4,5 +4,6 @@
 
 {% block body %}
     <h1>Modifier un utilisateur</h1>
-    {{ form(userForm) }}
+
+    {{ form_widget(userForm, { 'attr': {'checked': 'checked'} }) }}
 {% endblock %}
