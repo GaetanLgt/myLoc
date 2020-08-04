@@ -23,13 +23,10 @@ class EditUserType extends AbstractType
                 'attr' => ['class' =>'form-control'],
             ])
             ->add('role', ChoiceType::class, [
-                'choices' => [
-                    'Utilisateur' => 'ROLE_USER',
-                    'Administrateur' => 'ROLE_ADMIN'
-                ],
+                'choice_label' =>'role',
                 'expanded' => true,
                 'multiple' => true,
-                'label' => 'Rôles' 
+                'label' => 'Rôles',
             ])
             ->add('valider', SubmitType::class)
         ;
