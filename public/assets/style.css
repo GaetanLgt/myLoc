@@ -42,6 +42,14 @@
   height: 400px;
   width: 400px;
 }
+.imageSize2{
+  height: 300px;
+  width: 400px;
+}
+.imageSize3{
+  height: 200px;
+  width: 200px;
+}
 @media screen and (min-width: 200px) and (max-width: 800px) {
   .imageSize{
     height: auto;
@@ -51,6 +59,16 @@
     height: auto;
     width: auto;
   }
+  .imageSize2 {
+    height: auto;
+    width: auto;
+  }
+  .imageSize3 {
+    height: auto;
+    width: auto;
+  }
+
+
 }
 @media screen and (min-width: 200px) and (max-width: 800px) {
   .descriptSize{
@@ -61,13 +79,29 @@
     height: 100px;
     width: 100px;
   }
+  .descriptSize2{
+    height: 60px;
+    width: 60px;
+  }
+  .descriptSize3{
+    height: 100px;
+    width: 100px;
+  }
 }
 .descriptSize{
   height: 150px;
   width: auto;
 }
 .descriptSize1{
-  height: 150px;
+  height: 100px;
+  width: auto;
+}
+.descriptSize2{
+  height: 250px;
+  width: auto;
+}
+.descriptSize3{
+  height: 100px;
   width: auto;
 }
 .buttonSize{
@@ -77,6 +111,14 @@
 .buttonSize1{
   height: 10px;
   width: 50px;
+}
+.buttonSize2{
+  height: auto;
+  width: 150px;
+}
+.buttonSize3{
+  height: 50px;
+  width: 100px;
 }
 .titlec {
   text-transform: uppercase;
