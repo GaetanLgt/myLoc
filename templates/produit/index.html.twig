@@ -24,10 +24,16 @@
             <p class="fontdes">{{ produit.categorie }}</p>
             <a class="fonttext">Nombre de points nécessaire:</a>
             <p class="fontdes">{{ produit.nbpts}}</p>
-            <a href="/emprunt/{{ produit.id }}" class="mb-3 btn waves-effect waves-orange text-uppercase buttonSize4">Emprunter</a>
+            <a href="/emprunt/ajout/{{ produit.id }}/{{app.user.id }}" class="mb-3 btn waves-effect waves-orange text-uppercase buttonSize4">Emprunter</a>
             </div>
             </div>
         </div>
+        {% for emprunt in emprunt %}
+            {% if ((emprunt.dateDebut|date("d/m/Y")) >= ("now"|date("d/m/Y"))) or ((emprunt.dateFin|date("d/m/Y")) <= ("now"|date("d/m/Y"))) %}
+            {{ (emprunt.dateDebut|date("d/m/Y")) }}
+            {{ (emprunt.dateFin|date("d/m/Y")) }}
+            {% endif %}
+        {% endfor %}
     </div>
 <div>
 
