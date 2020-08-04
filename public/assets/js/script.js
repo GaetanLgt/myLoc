@@ -58,15 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Collapsible.init(elems, options);
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, options);
+  });
+
   // Or with jQuery
 
   $(document).ready(function(){
-    $('.collapsible').collapsible();
+    $('.datepicker').datepicker();
   });
-
-  $(document).ready(function() {
-    // you may need to change this code if you are not using Bootstrap Datepicker
-    $('.js-datepicker').datepicker({
-        format: 'yyyy-mm-dd'
-    });
-}); 
