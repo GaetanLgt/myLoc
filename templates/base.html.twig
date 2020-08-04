@@ -60,6 +60,7 @@
             {% if app.user %}
               <li><a href="/client/{{ app.user.id }}"> {{ app.user }} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
+              <li><a class="waves-effect" href="">Admin</a></li>
             {% else %}
               <li><a href="/login">Connexion</a></li>
               <li><a href="/registration">Inscription</a></li>
@@ -76,8 +77,6 @@
 
             </ul>
             <li><div class="divider"></div></li>
-            <li><a class="subheader"></a></li>
-            <li><a class="waves-effect" href="">Admin</a></li>
           </ul>
             <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           </div>
