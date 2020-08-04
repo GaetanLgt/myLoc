@@ -1,8 +1,28 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <!-- CSS -->
+            
+            <!-- Animate -->
+            <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+            <!-- Google Icon -->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+            <!-- AniCollection -->
+            <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+            
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+            <link rel="stylesheet" href="../assets/style.css">
+
+{% endblock stylesheets %}
+    
 
 {% block title %}Modifier un utilisateur{% endblock %}
 
 {% block body %}
     <h1>Modifier un utilisateur</h1>
-    {{ form(userForm) }}
+    {{ form_start(userForm) }}
+    {{ form_end(userForm) }}
 {% endblock %}

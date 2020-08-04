@@ -57,9 +57,12 @@ public function editUser(User $user, Request $request)
      * @Route("/utilisateurs", name="utilisateurs")
      */
     public function usersList(UserRepository $users)
-    {
+    {   
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository(Category::class)->findAll();
         return $this->render('admin/users.html.twig', [
             'users' => $users->findAll(),
+            'categories' => $categories,
         ]);
     }
 

@@ -621,7 +621,7 @@ main {
   transform-origin: bottom;
   width: 200px;
 }
-[type="checkbox"].filled-in:checked + span:not(.lever):after {
+[type="checkbox"]:not(:checked) {
  
   top: 0;
  
@@ -634,5 +634,7 @@ main {
   background-color: #afb42b;
  
   z-index: 0;
+
+  opacity: 0.8 !important;
  
 }

@@ -64,5 +64,4 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.collapsible').collapsible();
   });
 
-  
  
