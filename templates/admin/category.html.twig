@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des catégories{% endblock %}
+
+{% block body %}
+    <h1>Liste des catégories</h1>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>name</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {# On boucle sur les utilisateurs #}
+            {% for category in category %}
+                <tr>
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.name }}</td>
+                    <td><a href="/admin/categories/modifier/{{category.id}} ">Modifier</a></td>
+                </tr>
+                
+            {% else %}
+                <p>Aucune catégorie saisie</p>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
