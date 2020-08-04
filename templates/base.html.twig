@@ -42,10 +42,10 @@
             {% if app.user %}
               <li><a class="text-focus-in" href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
               <li><a class="text-focus-in" href="/logout">Déconnexion</a></li>
+              <li><a class="waves-effect text-focus-in" href="#!">Admin</a></li>
             {% else %}
               <li ><a class="text-focus-in" href="/login">Connexion</a></li>
               <li><a class="text-focus-in" href="/registration">Inscription</a></li>
-              <li><a class="waves-effect text-focus-in" href="#!">Admin</a></li>
             {% endif %}
             
         </ul>
