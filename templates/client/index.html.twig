@@ -7,10 +7,6 @@
     
 <h5 class="fontdes  mt-5 amber lighten-2 mx-auto p-2 rounded z-depth-2" >Bonjour {{ app.user.lastname}} {{ app.user.firstname}}</h5>
         
-{% if is_granted('ROLE_ADMIN') %}
-        <a href="/admin/categories">edit cat</a>
-{% endif %}
-
 {% if app.user %}
     <div class="">
         
@@ -23,9 +19,14 @@
                 <p class="ml-3"><a class="fonttext ">Email:</a> <a class="fontdes">{{ app.user.email}}</a></p>
                 <p class="pb-3 ml-3"><a class="fonttext ">Points disponible:</a> <a class="fontdes">{{ app.user.totalpts}}</a></p>
             </div>
-            <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Vos produits publié</h6>
-     <div class="row">
-     <div class="col-sm-12">      
+        <h6 class="fontdes mb-3 amber lighten-2 mx-auto p-2 rounded z-depth-2">Administration</h6>
+        {% if is_granted('ROLE_ADMIN') %}
+        <a class="btn" href="/admin/categories">edit cat</a>
+        <a class="btn" href="/admin/utilisateurs">utilisateurs</a></p>
+        {% endif %}
+    <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Vos produits publié</h6>
+    <div class="row">
+    <div class="col-sm-12">      
     {% for produit in produitsClient %}        
     <ul class="collapsible mb-0">
         <li>
@@ -59,12 +60,23 @@
             </div>
             </div>
             </div>
+            <ul class="collapsible">
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">filter_drama</i>
+      First
+      <span class="new badge">4</span></div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">place</i>
+      Second
+      <span class="badge">1</span></div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+</ul>
     </div>
-    </div>
-    </div>
-    <div class="container">
-    <div class="row">
-    
     </div>
     </div>
     </div>
