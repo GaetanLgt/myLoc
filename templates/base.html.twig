@@ -28,11 +28,11 @@
 
   <nav> 
   <div class="nav-wrapper teal lighten-1 z-depth-3">
-  <a href="/" class="brand-logo ml-4 "><i class="material-icons amber-text">library_books</i>MYDIATEK</a>
+  <a href="/" class="text-focus-in brand-logo ml-4 "><i class="text-focus-in material-icons amber-text ">library_books</i>MYDIATEK</a>
       
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <!-- Dropdown Trigger -->
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Catégories<i class="material-icons right"></i></a></li>
+          <li><a class="dropdown-trigger text-focus-in " href="#!" data-target="dropdown1">Catégories<i class="material-icons right"></i></a></li>
             <ul id="dropdown1" class="dropdown-content">
 
               {% for categorie in categories %}
@@ -44,9 +44,9 @@
               <li><a href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
             {% else %}
-              <li ><a href="/login">Connexion</a></li>
-              <li><a href="/registration">Inscription</a></li>
-              <li><a class="waves-effect" href="#!">Admin</a></li>
+              <li ><a class="text-focus-in" href="/login">Connexion</a></li>
+              <li><a class="text-focus-in" href="/registration">Inscription</a></li>
+              <li><a class="waves-effect text-focus-in" href="#!">Admin</a></li>
             {% endif %}
             
         </ul>
