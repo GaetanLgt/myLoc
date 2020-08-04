@@ -40,8 +40,8 @@
               {% endfor %}
             </ul>
             {% if app.user %}
-              <li><a href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
-              <li><a href="/logout">Déconnexion</a></li>
+              <li><a class="text-focus-in" href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
+              <li><a class="text-focus-in" href="/logout">Déconnexion</a></li>
             {% else %}
               <li ><a class="text-focus-in" href="/login">Connexion</a></li>
               <li><a class="text-focus-in" href="/registration">Inscription</a></li>
