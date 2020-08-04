@@ -3,5 +3,7 @@
 {% block title %}Hello EmpruntController!{% endblock %}
 
 {% block body %}
-{{ form(Form) }}
+{{ form_start(Form) }}
+    {{ form_row(Form.dateDebut)}}
+{{ form_end(Form) }}
 {% endblock %}

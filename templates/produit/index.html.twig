@@ -34,8 +34,10 @@
             <p class="fontdes">{{ produit.categorie }}</p>
             <a class="fonttext">Nombre de points nécessaire:</a>
             <p class="fontdes">{{ produit.nbpts}}</p>
+            {% if app.user %}
             <a href="/emprunt/ajout/{{ produit.id }}/{{app.user.id }}" class="mb-3 btn waves-effect waves-orange text-uppercase buttonSize4">Emprunter</a>
-            </div>
+            {% endif %}
+        </div>
             </div>
         </div>
     </div>
