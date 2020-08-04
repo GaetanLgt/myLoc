@@ -771,6 +771,7 @@ main {
 
 
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-  opacity: 1;
+  position: static ;
+  opacity: 1 !important;
   pointer-events: none;
 }
