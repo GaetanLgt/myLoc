@@ -6,6 +6,7 @@ use App\Entity\Emprunt;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class EmpruntType extends AbstractType
 {
@@ -16,6 +17,7 @@ class EmpruntType extends AbstractType
             ->add('dateFin')
             ->add('Emprunteur')
             ->add('affaire')
+            ->add('enregister', (SubmitType::class))
         ;
     }
 
