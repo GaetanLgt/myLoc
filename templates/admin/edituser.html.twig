@@ -22,6 +22,18 @@
 {% block title %}Modifier un utilisateur{% endblock %}
 
 {% block body %}
+{% if is_granted('ROLE_ADMIN') %}
+<div class="container">
+    <div class="row">
+        <div class="col-6 rounded mt-4 z-depth-2 text-center">
+            <a href="/admin/utilisateurs" >Gérer les utilisateurs</a>
+        </div>
+        <div class="col-6 rounded mt-4 z-depth-2 text-center">
+            <a href="/admin/categories" >Gérer les categories</a>
+        </div>
+    </div>
+</div>
+{% endif %}
     <h1>Modifier un utilisateur</h1>
 
     {{ form_widget(userForm, { 'attr': {'checked': 'checked'} }) }}
