@@ -11,26 +11,21 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading titlec mb-5 ">Connexion</h3>
+              <h3 class="text-center login-heading titlec mb-5 ">Connexion</h3>
               <form action="{{ path('login') }}" method="post">
 
                 <div class="input-field titlec">
                     <i class="material-icons prefix">account_circle</i>
-                    <input name="_username" type="email" id="inputEmail" class="form-control validate" required autofocus>
+                    <input name="_username" type="email" id="inputEmail" class="d-flex justify-content-center form-control validate" required autofocus>
                     <label data-error="wrong" data-success="right" for="exampleInputEmail1">Email</label>
                 </div>
 
                 <div class="input-field titlec">
                 <i class="material-icons prefix">lock</i>
-                  <input name="_password" type="password" id="inputPassword" class="form-control validate" required>
+                  <input name="_password" type="password" id="inputPassword" class="d-flex justify-content-center form-control validate" required>
                   <label data-error="wrong" data-success="right" for="exampleInputPassword1">Mot de passe</label>
                 </div>
-
-                <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Envoyer mot de passe</label>
-                </div>
-                <button class="btn waves-effect waves-orange text-uppercase font-weight-bold mb-2" type="submit" name="action">Connexion
+                <button class="d-flex justify-content-start btn waves-effect waves-orange text-uppercase font-weight-bold mb-2" type="submit" name="action">Connexion
                   <i class="material-icons right">done</i>
                 </button>
               </form>

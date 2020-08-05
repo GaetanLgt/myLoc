@@ -3,8 +3,11 @@
 {% block title %}Liste des utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>Liste des utilisateurs</h1>
-    <table>
+    <h3 class="text-center mb-5 mt-5 amber-text">Liste des utilisateurs</h3>
+    <div class="container">
+    <div class="row">
+    <div class="z-depth-3 col-12 border border-dark rounded">
+    <table class="centered responsive-table">
         <thead>
             <th>ID</th>
             <th>Email</th>
@@ -29,7 +32,7 @@
                         {% endfor %}
                     </td>
                     <td>{{ user.affaires|length }}</td>
-                    <td><a href="{{ path('admin_modifier_utilisateur', {'id': user.id}) }}">Modifier</a></td>
+                    <td><a class="amber-text" href="/admin/utilisateurs/modifier/{{user.id}}">Modifier</a></td>
                 </tr>
                 
             {% else %}
@@ -37,4 +40,12 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-12">
+    <a class="z-depth-3 waves-effect waves-light btn"><i class="material-icons left">add</i>Ajouter</a>
+    </div>
+    </div>
+    </div>
 {% endblock %}

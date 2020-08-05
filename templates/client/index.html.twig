@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Administration Utilisateur{% endblock %}
+{% block title %}Espace Perso{% endblock %}
 
 {% block body %}
 <body class="bg-light">
     
 <h5 class="fontdes  mt-5 amber lighten-2 mx-auto p-2 rounded z-depth-2" >Bonjour {{ app.user.lastname}} {{ app.user.firstname}}</h5>
-
+        
 {% if app.user %}
     <div class="">
+        
     <div class="row">
     <div class="col-4">
         <h6 class="fontdes mb-3 mt-5 amber lighten-2 mx-auto p-2 rounded z-depth-2">Gérer les informations de votre compte</h6>
@@ -18,9 +19,14 @@
                 <p class="ml-3"><a class="fonttext ">Email:</a> <a class="fontdes">{{ app.user.email}}</a></p>
                 <p class="pb-3 ml-3"><a class="fonttext ">Points disponible:</a> <a class="fontdes">{{ app.user.totalpts}}</a></p>
             </div>
-            <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Vos produits publié</h6>
-     <div class="row">
-     <div class="col-sm-12">      
+        <h6 class=" fontdes mb-3 amber lighten-2 mx-auto p-2 rounded z-depth-2">Administration</h6>
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href="/admin/categories" class="container-fluid btn tooltipped mb-2" data-position="bottom" data-tooltip="Editer Categories">Edit Categories</a>
+        <a href="/admin/utilisateurs" class="container-fluid btn tooltipped" data-position="bottom" data-tooltip="Editer Utilisateurs">Edit Utilisateurs</a>
+        {% endif %}
+    <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Vos produits publié</h6>
+    <div class="row">
+    <div class="col-sm-12">      
     {% for produit in produitsClient %}        
     <ul class="collapsible mb-0">
         <li>
@@ -37,8 +43,8 @@
     <div class="col s8">
         <h6 class="fontdes mt-5 mb-3 amber lighten-2 mx-auto p-2 rounded z-depth-2">Publié un produit</h6>
             <div class="row">
-            <div class="col 12">
-            <div class="z-depth-2 rounded p-4 rounded">
+            <div class="col 12 ">
+            <div class="z-depth-2 rounded p-4 rounded ">
             
             {{form_start(form) }}
                     
@@ -54,15 +60,7 @@
             </div>
             </div>
             </div>
-    </div>
-    </div>
-    </div>
-    <div class="container">
-    <div class="row">
-    
-    </div>
-    </div>
-    </div>
+          
         
 {% endif %}
 

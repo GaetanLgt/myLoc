@@ -3,11 +3,14 @@
 {% block title %}Liste des catégories{% endblock %}
 
 {% block body %}
-    <h1>Liste des catégories</h1>
-    <table>
+    <h3 class="text-center mb-5 mt-5 amber-text">Liste des catégories</h3>
+    <div class="container">
+    <div class="row">
+    <div class="z-depth-3 col-12 border border-dark rounded">
+    <table class="centered responsive-table">
         <thead>
             <th>ID</th>
-            <th>name</th>
+            <th>Nom</th>
             <th>Actions</th>
         </thead>
         <tbody>
@@ -16,7 +19,7 @@
                 <tr>
                     <td>{{ category.id }}</td>
                     <td>{{ category.name }}</td>
-                    <td><a href="/admin/categories/modifier/{{category.id}} ">Modifier</a></td>
+                    <td><a class="amber-text" href="/admin/categories/modifier/{{category.id}} ">Modifier</a></td>
                 </tr>
                 
             {% else %}
@@ -24,4 +27,14 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-12">
+    <a class="z-depth-3 waves-effect waves-light btn"><i class="material-icons left">add</i>Ajouter</a>
+    </div>
+    </div>
+    </div>
+    
+    
 {% endblock %}

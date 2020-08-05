@@ -22,7 +22,7 @@ class EmpruntType extends AbstractType
                 'html5' => false,
             
                 // adds a class that can be selected in JavaScript
-                'attr' => ['class' => 'js-datepicker'],
+                'attr' => ['class' => 'datepicker'],
             ])
             ->add('dateFin', DateType::class, [
                 'widget' => 'single_text',
@@ -31,7 +31,7 @@ class EmpruntType extends AbstractType
                 'html5' => false,
             
                 // adds a class that can be selected in JavaScript
-                'attr' => ['class' => 'js-datepicker'],
+                'attr' => ['class' => 'datepicker'],
             ])
             ->add('Emprunteur')
             ->add('affaire')
