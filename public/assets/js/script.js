@@ -58,16 +58,25 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Collapsible.init(elems, options);
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, options);
-  });
-
   
   
 
   $(document).ready(function(){
-    $('.datepicker').datepicker();
+    var disable = $('#disable').html();
+    $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd',
+      disableDayFn:function (date) {
+        let disableListDate = disable;
+        console.log(disableListDate );
+            if(disableListDate.includes(date.toDateString())) {
+                return true
+            }else{
+                return false
+            }
+
+        },
+      
+      });
   });
 
   document.addEventListener('DOMContentLoaded', function() {

@@ -18,4 +18,18 @@
 </div>
 </div>
 </div>
+<p id="disable" class="invisible">[
+{% for emprunt in emprunt %}
+            {% set dateMin = emprunt.dateDebut|date %}
+            {% set dateMax = emprunt.dateFin|date %}
+            {% set startDate = emprunt.dateFin|date   %}
+{% set difference = date( emprunt.dateDebut|date() ).diff(date(startDate)) %}
+{% set leftDays = difference.days %}
+{% set j = 0 %}            
+            {% for i in 0..leftDays %}
+            {% set j = j +1 %}
+            '{{ emprunt.dateDebut|date_modify('+' ~ i ~ ' day')|date("D M d Y") }}',
+            {% endfor %}
+            
+         {% endfor %}]</p>
 {% endblock %}

@@ -43,7 +43,9 @@
             {% if app.user %}
               <li><a class="text-focus-in" href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
               <li><a class="text-focus-in" href="/logout">Déconnexion</a></li>
+            {% if is_granted('ROLE_ADMIN') %}
               <li><a class="waves-effect text-focus-in" href="/admin">Admin</a></li>
+            {% endif %}
             {% else %}
               <li ><a class="text-focus-in" href="/login">Connexion</a></li>
               <li><a class="text-focus-in" href="/registration">Inscription</a></li>
@@ -89,7 +91,6 @@
         {% block body %}
 
         {% endblock %}
-
 
         {% block javascripts %}
             <!-- JS, Popper.js, and jQuery -->

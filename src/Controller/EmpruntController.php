@@ -20,7 +20,6 @@ class EmpruntController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         $categories = $em->getRepository(Category::class)->findAll();
-
         $form = $this->createForm(EmpruntType::class, $emprunt);
         $form->handleRequest($request);
 
@@ -42,6 +41,7 @@ class EmpruntController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         $categories = $em->getRepository(Category::class)->findAll();
+        $emprunt1 = $em->getRepository(Emprunt::class)->findBy(['affaire'=> $affaires], ['dateDebut' => 'DESC'], 6);
 
         $emprunt =new Emprunt;
         $emprunt = $emprunt->setAffaire($affaires) ;
@@ -56,6 +56,7 @@ class EmpruntController extends AbstractController
         }
       
         return $this->render('emprunt/ajout.html.twig', [
+            'emprunt' => $emprunt1,
             'Form' => $form->createView(),
             'categories' => $categories,
         ]);

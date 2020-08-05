@@ -20,13 +20,13 @@ class EmpruntType extends AbstractType
             
                 // prevents rendering it as type="date", to avoid HTML5 date pickers
                 'html5' => false,
-            
+                
                 // adds a class that can be selected in JavaScript
                 'attr' => ['class' => 'datepicker'],
             ])
             ->add('dateFin', DateType::class, [
                 'widget' => 'single_text',
-            
+                
                 // prevents rendering it as type="date", to avoid HTML5 date pickers
                 'html5' => false,
             
