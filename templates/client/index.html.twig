@@ -19,8 +19,8 @@
                 <p class="ml-3"><a class="fonttext ">Email:</a> <a class="fontdes">{{ app.user.email}}</a></p>
                 <p class="pb-3 ml-3"><a class="fonttext ">Points disponible:</a> <a class="fontdes">{{ app.user.totalpts}}</a></p>
             </div>
-        <h6 class=" fontdes mb-3 amber lighten-2 mx-auto p-2 rounded z-depth-2">Administration</h6>
         {% if is_granted('ROLE_ADMIN') %}
+        <h6 class=" fontdes mb-3 amber lighten-2 mx-auto p-2 rounded z-depth-2">Administration</h6>
         <a href="/admin/categories" class="container-fluid btn tooltipped mb-2" data-position="bottom" data-tooltip="Editer Categories">Edit Categories</a>
         <a href="/admin/utilisateurs" class="container-fluid btn tooltipped" data-position="bottom" data-tooltip="Editer Utilisateurs">Edit Utilisateurs</a>
         {% endif %}
