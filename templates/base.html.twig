@@ -7,8 +7,6 @@
         {% block stylesheets %}
             <!-- Material Icons -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <!-- CSS -->
-            <link rel="stylesheet" href="../assets/style.css">
             <!-- Animate -->
             <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
             <!-- Google Icon -->
@@ -20,7 +18,10 @@
             <!-- Materialize -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <!-- Favicon -->
-            <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+            <link rel="shortcut icon" class=""href="https://img.icons8.com/wired/64/000000/book.png" type="image/x-icon">
+            <!-- CSS -->
+            <link rel="stylesheet" href="../assets/style.css">
+            
         {% endblock %}
         
     </head>
@@ -42,9 +43,7 @@
             {% if app.user %}
               <li><a class="text-focus-in" href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
               <li><a class="text-focus-in" href="/logout">Déconnexion</a></li>
-              {% if is_granted('ROLE_ADMIN') %}
               <li><a class="waves-effect text-focus-in" href="/admin">Admin</a></li>
-              {% endif %}
             {% else %}
               <li ><a class="text-focus-in" href="/login">Connexion</a></li>
               <li><a class="text-focus-in" href="/registration">Inscription</a></li>

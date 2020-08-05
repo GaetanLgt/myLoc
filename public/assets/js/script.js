@@ -67,15 +67,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
   $(document).ready(function(){
-    $('.datepicker').datepicker({
-      format: 'dd/mm/yyyy',
-      selectMonths: true, // Creates a dropdown to control month
-      selectYears: 15,
-      monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-      weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
-      today: 'aujourd\'hui',
-      clear: 'effacer',
-      formatSubmit: 'yyyy/mm/dd'
-    });
+    $('.datepicker').datepicker();
+  });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tooltipped');
+    var instances = M.Tooltip.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
   });

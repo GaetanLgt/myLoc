@@ -1,19 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Administration{% endblock %}
 
 {% block body %}
-{% if is_granted('ROLE_ADMIN') %}
 <div class="container">
-    <div class="row">
-        <div class="col-6 rounded mt-4 z-depth-2 text-center">
-            <a href="/admin/utilisateurs" >Gérer les utilisateurs</a>
-        </div>
-        <div class="col-6 rounded mt-4 z-depth-2 text-center">
-            <a href="/admin/categories" >Gérer les categories</a>
-        </div>
+<div class="row">
+    <div class="col-12 mt-5 d-flex justify-content-center">
+    <a href="/admin/utilisateurs" class="m-2 z-depth-3 waves-effect waves-light btn">Utilisateurs</a>
+    <a href="/admin/categories" class="m-2 z-depth-3 waves-effect waves-light btn">Categories</a>
     </div>
-</div>
-{% endif %}
-
+    </div>
+    </div>
 {% endblock %}
