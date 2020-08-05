@@ -42,20 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
   $( document ).ready(function(){
     $("select").formSelect();
   });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems, options);
-  });
-
-  // Or with jQuery
+  
+// Or with jQuery
 
   $(document).ready(function(){
-    $('.parallax').parallax();
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems, options);
+    $('.collapsible').collapsible();
   });
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -68,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
   $(document).ready(function(){
     $('.datepicker').datepicker();
   });
+
+  
 
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped');
