@@ -35,20 +35,18 @@
   font-style: normal;
 }
 .imageSize{
-  height: 300px;
-  width: 400px;
+  position: static;
 }
 .imageSize1{
-  height: 400px;
-  width: 400px;
+  height: 250px;
+  width: 250px;
 }
 .imageSize2{
-  height: 300px;
-  width: 400px;
+  height: 200px;
+  width: 200px;
 }
 .imageSize3{
-  height: 200px;
-  width: 225px;
+  position: static;
 }
 .descriptSize{
   height: 150px;
@@ -108,6 +106,7 @@ li a{
 li a:hover{
   color: #ffc107;
 }
+
 .brand-logo{
   font-family: roboto_condensedregular;
   font-size: 1.5rem !important;

@@ -5,7 +5,15 @@
 {% block title %}Modifier une catégorie{% endblock %}
 
 {% block body %}
-    <h1>Modifier une catégorie</h1>
+    <h3 class="text-center mb-5 mt-5 amber-text">Modifier une catégorie</h3>
+    <div class="container">
+    <div class="row">
+    <div class="z-depth-3 col-12 border border-dark rounded">
+
     {{ form_start(CategoryForm) }}
     {{ form_end(CategoryForm)}}
+
+    </div>
+    </div>
+    </div>
 {% endblock %}

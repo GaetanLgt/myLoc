@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Administration{% endblock %}
 
 {% block body %}
-<p><a href="/admin/utilisateurs">utilisateurs</a></p>
-<p><a href="/admin/categories">categories</a></p>
+<div class="container">
+<div class="row">
+    <div class="col-12 mt-5 d-flex justify-content-center">
+    <a href="/admin/utilisateurs" class="m-2 z-depth-3 waves-effect waves-light btn">Utilisateurs</a>
+    <a href="/admin/categories" class="m-2 z-depth-3 waves-effect waves-light btn">Categories</a>
+    </div>
+    </div>
+    </div>
 {% endblock %}
