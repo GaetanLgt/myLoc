@@ -42,7 +42,9 @@
             {% if app.user %}
               <li><a class="text-focus-in" href="/client/{{ app.user.id }}"> {{ app.user}} </a></li>
               <li><a class="text-focus-in" href="/logout">Déconnexion</a></li>
-              <li><a class="waves-effect text-focus-in" href="#!">Admin</a></li>
+              {% if is_granted('ROLE_ADMIN') %}
+              <li><a class="waves-effect text-focus-in" href="/admin">Admin</a></li>
+              {% endif %}
             {% else %}
               <li ><a class="text-focus-in" href="/login">Connexion</a></li>
               <li><a class="text-focus-in" href="/registration">Inscription</a></li>
@@ -60,6 +62,9 @@
             {% if app.user %}
               <li><a href="/client/{{ app.user.id }}"> {{ app.user }} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
+              {% if is_granted('ROLE_ADMIN') %}
+              <li><a class="waves-effect" href="/admin">Admin</a></li>
+              {% endif %}
             {% else %}
               <li><a href="/login">Connexion</a></li>
               <li><a href="/registration">Inscription</a></li>
@@ -76,8 +81,6 @@
 
             </ul>
             <li><div class="divider"></div></li>
-            <li><a class="subheader"></a></li>
-            <li><a class="waves-effect" href="">Admin</a></li>
           </ul>
             <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           </div>
