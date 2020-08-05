@@ -32,7 +32,7 @@ class EditUserType extends AbstractType
                 'multiple' => true,
                 'label' => 'Rôles',
                 'choice_attr' => [
-                    'class' => 'disable selected'
+                    'class' => ''
                 ],
             ])
             ->add('valider', SubmitType::class,[

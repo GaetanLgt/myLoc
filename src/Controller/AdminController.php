@@ -34,6 +34,7 @@ class AdminController extends AbstractController
  */
 public function editUser(User $user, Request $request)
 {
+    
     $form = $this->createForm(EditUserType::class, $user);
     $form->handleRequest($request);
     $em = $this->getDoctrine()->getManager();
@@ -45,7 +46,6 @@ public function editUser(User $user, Request $request)
         $entityManager->flush();
 
         $this->addFlash('message', 'Utilisateur modifié avec succès');
-        return $this->redirectToRoute('index');
     }
     
     return $this->render('admin/edituser.html.twig', [
@@ -104,5 +104,29 @@ public function editUser(User $user, Request $request)
         ]);
     }
 
+    /**
+     * @Route("/categories/add", name="category_add")
+     */
+    public function addCat( Request $request)
+    {
+        $category = new Category ;
+        $form = $this->createForm(CategoryEditType::class,$category);
+        $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository(Category::class)->findAll();
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($category);
+        $entityManager->flush();
+
+        
+        
+    }
+    return $this->render('admin/addCategorie.html.twig', [
+            'categories' => $categories,
+            'CategoryForm' => $form->createView(),
+        ]);
 }
 
+}
