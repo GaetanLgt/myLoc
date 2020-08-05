@@ -49,15 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.collapsible').collapsible();
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, options);
-  });
-
-  // Or with jQuery
+  
+  
 
   $(document).ready(function(){
-    $('.datepicker').datepicker();
+    var disable = $('#disable').html();
+    $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd',
+      disableDayFn:function (date) {
+        let disableListDate = disable;
+        console.log(disableListDate );
+            if(disableListDate.includes(date.toDateString())) {
+                return true
+            }else{
+                return false
+            }
+
+        },
+      
+      });
   });
 
   
