@@ -64,7 +64,7 @@
               <li><a href="/client/{{ app.user.id }}"> {{ app.user }} </a></li>
               <li><a href="/logout">Déconnexion</a></li>
               {% if is_granted('ROLE_ADMIN') %}
-              <li><a class="waves-effect" href="/admin">Admin</a></li>
+              <li><a class="waves-effect" href="">Admin</a></li>
               {% endif %}
             {% else %}
               <li><a href="/login">Connexion</a></li>
@@ -91,7 +91,6 @@
         {% block body %}
 
         {% endblock %}
-
 
         {% block javascripts %}
             <!-- JS, Popper.js, and jQuery -->

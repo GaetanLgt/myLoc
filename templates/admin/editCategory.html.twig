@@ -11,7 +11,12 @@
     <div class="z-depth-3 col-12 border border-dark rounded">
 
     {{ form_start(CategoryForm) }}
-    {{ form_end(CategoryForm)}}
+        {{ form_row(CategoryForm.name, {'label': 'Nom', 'label_attr': {'class':"titlec"},   'attr': {'class':""}}) }}
+        {{ form_row(CategoryForm.enregister, {'label': 'Enregister', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"mb-3 mt-2 btn waves-effect waves-orange text-uppercase "}}) }}
+    {{ form_end(CategoryForm) }}
+
+    
+
 
     </div>
     </div>

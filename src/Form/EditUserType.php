@@ -23,18 +23,21 @@ class EditUserType extends AbstractType
                 'attr' => ['class' =>'form-control'],
             ])
             ->add('role', ChoiceType::class, [
+                'attr' => ['class' => 'multiple'],
                 'choices' => [
-                    'utilisateur' => 'ROLE_USER',
-                    'administrateur' => 'ROLE_ADMIN',
+                    'Utilisateur ' => 'ROLE_USER',
+                    'Administrateur' => 'ROLE_ADMIN',
             ],
-                'expanded' => true,
+                'expanded' => false,
                 'multiple' => true,
                 'label' => 'Rôles',
                 'choice_attr' => [
-                    'class' => 'browser-default'
+                    'class' => 'disable selected'
                 ],
             ])
-            ->add('valider', SubmitType::class)
+            ->add('valider', SubmitType::class,[
+                'attr' => ['class' => 'btn mb-3'],
+            ])
         ;
         
     }
