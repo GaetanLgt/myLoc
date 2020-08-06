@@ -40,9 +40,11 @@
 {{ form_start(Form) }}
    {{ form_row(Form.dateDebut, {'label': '', 'label_attr': {'class':"titlec"},   'attr': {'class':"datepicker"}}) }}
    {{ form_row(Form.dateFin, {'label': '', 'label_attr': {'class':"titlec"},   'attr': {'class':"datepicker"}}) }}
-   {{ form_row(Form.Emprunteur, {'label': '', 'label_attr': {'class':"titlec"},   'attr': {'class':"datepicker"}}) }}
-   {{ form_row(Form.affaire, {'label': '', 'label_attr': {'class':"titlec"},   'attr': {'class':"datepicker"}}) }}
    {{ form_row(Form.enregister, {'label': 'Enregister', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"mt-2 btn waves-effect waves-orange text-uppercase "}}) }}
+   <div class="invisible">
+      {{ form_row(Form.Emprunteur, {'label': '', 'label_attr': {'class':"invisible titlec"},   'attr': {'class':"invisible "}}) }}
+      {{ form_row(Form.affaire, {'label': '', 'label_attr': {'class':"invisible titlec"},   'attr': {'class':"invisible "}}) }}
+   </div>
 {{ form_end(Form) }}
 </div>
 </div>
