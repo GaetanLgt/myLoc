@@ -110,3 +110,13 @@ function topFunction() {
 
   $("html, body").animate({scrollTop : 0}, 1300);
 };
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.carousel');
+  var instances = M.Carousel.init(elems, options);
+});
+
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
