@@ -26,7 +26,7 @@ class ClientController extends AbstractController
         $clientUser = $em->getRepository(User::class)->find($id);
         $produitsClient = $clientUser->getAffaires();
         $objets = $em->getRepository(Affaires::class)->findBy(['proprietaire'=> $id]);
-        $emprunts = $em->getRepository(Emprunt::class)->findBy(['affaire' => $objets]);
+        $emprunts = $em->getRepository(Emprunt::class)->findBy(['affaire' => $objets],['dateDebut' => 'ASC']);
         
         $form = $this->createForm(AffairesType::class);
         $form->handleRequest($request);

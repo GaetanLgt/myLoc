@@ -8,19 +8,10 @@
     <div class="row mt-5">
         <div class="col-6">
             <div class="row">
-            <img class="z-depth-2 p-2 col-12 mt-5 animate__animated animate__backInLeft rounded img-fluid materialboxed" width="600" src="/images/affaires/{{ produit.imageName }} ">
-            <div class="rounded mt-4 z-depth-2 animate__animated animate__backInLeft">
-            {% for emprunt in emprunt %}
-            {% if ((emprunt.dateDebut|date("d/m/Y")) <= ("now"|date("d/m/Y"))) or ((emprunt.dateFin|date("d/m/Y")) >= ("now"|date("d/m/Y"))) %}
-            <p class="mr-3 ml-3 pt-3 mt-0 mb-0"><i class="fonttext">Date d'emprunt le :</i> <i class="fontdes">{{ (emprunt.dateDebut|date("d/m/Y")) }}</i></p>
-            <p class="mr-3 ml-3 mt-0"><i class="fonttext">Date de retour le :</i> <i class="fontdes">{{ (emprunt.dateFin|date("d/m/Y")) }}</i></p>
-            {% endif %}
-            {% endfor %}
+                <img class="z-depth-2 p-2 col-12 mt-5 animate__animated animate__backInLeft rounded img-fluid materialboxed" width="600" src="/images/affaires/{{ produit.imageName }} ">
             </div>
-
         </div>
         
-        </div>
         <div class="col-6 mt-5">
             <div class="row">
             <div class="rounded animate__animated animate__backInRight col-11 z-depth-2">
@@ -34,6 +25,12 @@
             <p class="fontdes">{{ produit.categorie }}</p>
             <a class="fonttext">Nombre de points nécessaire:</a>
             <p class="fontdes">{{ produit.nbpts}}</p>
+            <select class="browser-default mb-3">
+            <option value="" disabled selected>Voir les dates réservées</option>
+            {% for emprunt in emprunt %}
+            <option value="1">Du {{ (emprunt.dateDebut|date("d/m/Y")) }} au {{ (emprunt.dateFin|date("d/m/Y")) }}</option>
+            {% endfor %}
+            </select>
             {% if app.user %}
             <a href="/emprunt/ajout/{{ produit.id }}/{{app.user.id }}" class="mb-3 btn waves-effect waves-orange text-uppercase buttonSize4">Emprunter</a>
             {% endif %}
