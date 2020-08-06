@@ -57,8 +57,13 @@ class EmpruntController extends AbstractController
             $target = $emprunt->getDateFin();
             $interval = $origin->diff($target);
             $interval = $interval->format('%a');
-            $resultat= $total - ($pts*$interval);
-            $user->setTotalPts($resultat) ;
+            $resultat= ($pts*$interval);
+            $user->setTotalPts($total - $resultat);
+            $proprio = $affaires->getProprietaire();
+            $proprioPts = $proprio->getTotalPts();
+            $proprio->setTotalPts($proprioPts + $resultat);
+            $this->addFlash('message', "réservation faite $resultat points déduits");
+            $entityManager->persist($proprio);
             $entityManager->persist($emprunt);
             $entityManager->persist($user);
             $entityManager->flush();

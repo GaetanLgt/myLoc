@@ -83,7 +83,7 @@ public function editUser(User $user, Request $request)
         $entityManager->flush();
 
         $this->addFlash('message', 'Categories modifié avec succès');
-        return $this->redirectToRoute('index');
+        
     }
     
     return $this->render('admin/editCategory.html.twig', [
