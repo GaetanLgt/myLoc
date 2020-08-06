@@ -142,3 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
 $(document).ready(function(){
   $('select').formSelect();
 });
+
+function masquernotification()
+{
+  document.getElementById("zonedenotification").innerHTML="";
+}
+ window.setTimeout(masquernotification, 2000);
+
+ 
