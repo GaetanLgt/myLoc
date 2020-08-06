@@ -89,9 +89,16 @@
 
     <body>
         {% block body %}
-
+        
         {% endblock %}
-
+        <div class="">
+        <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+        <div id='scroll_to_top' class='opacity'>
+            <img src="https://i1155.photobucket.com/albums/p559/scrolltotop/arrow3.png" alt="Retourner en haut">
+        </div>
+        </div>
+        </div>
         {% block javascripts %}
             <!-- JS, Popper.js, and jQuery -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -112,6 +119,6 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
             <!-- ScriptJS -->
             <script type="text/javascript" src="/assets/js/script.js"></script>
-            
+
         {% endblock %}
 

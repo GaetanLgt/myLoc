@@ -31,6 +31,7 @@ class LoginController extends AbstractController
             $user->setPassword($hash);
 
             $newUser = $form->getData();
+            $newUser->setRole('ROLE_USER');
             $em = $this->getDoctrine()->getManager();
             $em->persist($newUser);
             $em->flush();

@@ -220,16 +220,20 @@ class User implements UserInterface
         return $this->lastname.' '.$this->firstname;
     }
 
-    public function getRole(): ?array
+    public function getRole()
     {
         $role = array($this->role);
         return $role;
     }
 
-    public function setRole(string $role): self
+    public function setRole($role)
     {
-        $this->role = $role;
-
+        $this->role = "ROLE_USER";
+        if( $role == ["ROLE_ADMIN"] ){
+            $this->role = "ROLE_ADMIN";
+        } else if( $role == ["ROLE_USER"] ){
+            $this->role = "ROLE_USER";
+        }
         return $this;
     }
 }

@@ -22,6 +22,17 @@
 {% block title %}Réservation{% endblock %}
 
 {% block body %}
+
+{% for message in app.flashes('message') %}
+<div class="container">
+  <div class="col-6">
+        <div class="z-depth-2 text-center rounded">
+          <p id="message"> {{ message }}</p>
+        </div>
+  </div>
+</div>
+{% endfor %}
+
 <h3 class="text-center amber-text titlec mt-5">Réservation {{ app.user.lastname}} {{ app.user.firstname}}</h3>
 <div class="container">
 <div class="row">
@@ -29,9 +40,11 @@
 {{ form_start(Form) }}
    {{ form_row(Form.dateDebut, {'label': '', 'label_attr': {'class':"titlec"},   'attr': {'class':"datepicker"}}) }}
    {{ form_row(Form.dateFin, {'label': '', 'label_attr': {'class':"titlec"},   'attr': {'class':"datepicker"}}) }}
-   {{ form_row(Form.Emprunteur, {'label': '', 'label_attr': {'class':"titlec"},   'attr': {'class':"datepicker"}}) }}
-   {{ form_row(Form.affaire, {'label': '', 'label_attr': {'class':"titlec"},   'attr': {'class':"datepicker"}}) }}
    {{ form_row(Form.enregister, {'label': 'Enregister', 'label_attr': {'class':"black-text titlec  "},   'attr': {'class':"mt-2 btn waves-effect waves-orange text-uppercase "}}) }}
+   <div class="invisible">
+      {{ form_row(Form.Emprunteur, {'label': '', 'label_attr': {'class':"invisible titlec"},   'attr': {'class':"invisible "}}) }}
+      {{ form_row(Form.affaire, {'label': '', 'label_attr': {'class':"invisible titlec"},   'attr': {'class':"invisible "}}) }}
+   </div>
 {{ form_end(Form) }}
 </div>
 </div>
