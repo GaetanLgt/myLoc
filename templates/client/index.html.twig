@@ -16,7 +16,7 @@
             <div class="z-depth-2  rounded">
             {% if app.user.imageName is empty %}
             {% else %}
-                <img class="z-depth-2 p-2 col-12 mt-5 animate__animated animate__backInLeft rounded img-fluid materialboxed" width="600" src="/images/user/{{ app.user.imageName }} ">
+                <img class="z-depth-2 p-2 col-12 animate__animated animate__fadeIn rounded img-fluid materialboxed" width="600" src="/images/user/{{ app.user.imageName }} ">
             {% endif %}   
                 <p class="pt-3 ml-3"><a class="fonttext ">Nom:</a> <a class="fontdes">{{ app.user.firstname}}</a></p>
                 <p class="ml-3"><a class="fonttext ">Prénom:</a> <a class="fontdes">{{ app.user.lastname}}</a></p>
