@@ -762,8 +762,21 @@ main {
   opacity: 1 !important;
   pointer-events: none;
 } */
-#scroll_to_top {
-
-  bottom: 50px;
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  z-index: 99;
+  border: none;
+  outline: none; 
+  background-image: url('https://i1155.photobucket.com/albums/p559/scrolltotop/arrow3.png');
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  width: 60px;
+  height: 70px;
   
+}
+#myBtn:hover {
+  background-image: url('https://i1155.photobucket.com/albums/p559/scrolltotop/arrow3.png');
 }
