@@ -60,11 +60,39 @@
             </div>
             </div>
             </div>
-          
-        
 {% endif %}
+        <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Produits réserver</h6>
 
+      <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Voir & Gérer les réservation</a>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <table class="">
+        <thead>
+          <tr class="fonttext1 ">
+              <th>Titre</th>
+              <th>Nom </th>
+              <th>Emprunter le:</th>
+              <th>Retour le:</th>
+          </tr>
+        </thead>
+        {% for emprunt in emprunts %}
+        <tbody>
+          <tr>
+            <td>{{ emprunt.affaire }}</td>
+            <td>{{ emprunt.emprunteur }}</td>
+            <td>{{ (emprunt.dateDebut|date("d/m/Y")) }}</td>
+            <td>{{ (emprunt.dateFin|date("d/m/Y")) }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+    
 </body>
 {% endblock %}
 

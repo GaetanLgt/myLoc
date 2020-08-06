@@ -88,6 +88,10 @@
     font-family: roboto_condensedregular;
     text-decoration: underline;
 }
+.fonttext1 {
+  font-family: roboto_condensedregular;
+  
+}
 .fonttitle {
   font-family: roboto_condensedregular;
 }
