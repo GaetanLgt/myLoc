@@ -41,17 +41,26 @@ class EmpruntController extends AbstractController
     {
         $em = $this->getDoctrine()->getManager();
         $categories = $em->getRepository(Category::class)->findAll();
-        $emprunt1 = $em->getRepository(Emprunt::class)->findBy(['affaire'=> $affaires], ['dateDebut' => 'DESC'], 6);
+        $emprunt1 = $em->getRepository(Emprunt::class)->findBy(['affaire'=> $affaires], ['dateDebut' => 'ASC'], 6);
 
         $emprunt =new Emprunt;
         $emprunt = $emprunt->setAffaire($affaires) ;
-        $emprunt =$emprunt->setEmprunteur($user);
+        $emprunt = $emprunt->setEmprunteur($user);
         $form = $this->createForm(EmpruntType::class, $emprunt);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $total = $user->getTotalPts();
+            $pts = $affaires->getNbPts();
+            $origin = $emprunt->getDateDebut();
+            $target = $emprunt->getDateFin();
+            $interval = $origin->diff($target);
+            $interval = $interval->format('%a');
+            $resultat= $total - ($pts*$interval);
+            $user->setTotalPts($resultat) ;
             $entityManager->persist($emprunt);
+            $entityManager->persist($user);
             $entityManager->flush();
         }
       
