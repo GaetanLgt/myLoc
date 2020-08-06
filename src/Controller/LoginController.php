@@ -32,9 +32,11 @@ class LoginController extends AbstractController
 
             $newUser = $form->getData();
             $newUser->setRole('ROLE_USER');
+            $newUser->setTotalPts(1000);
             $em = $this->getDoctrine()->getManager();
             $em->persist($newUser);
             $em->flush();
+            $this->addFlash('message', 'Utilisateur ajouté avec succès');
         }
 
         return $this->render('login/index.html.twig', [
@@ -61,6 +63,6 @@ class LoginController extends AbstractController
      */
     public function logout()
     {
-        
+        $this->addFlash('message', 'Utilisateur déconnété avec succès');
     }
 }
