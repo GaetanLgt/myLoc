@@ -63,8 +63,18 @@
           
         
 {% endif %}
-
-
+{% for emprunt in emprunts %}
+        <div class="border border-dark mr-3 ml-3 pt-3 mt-0 mb-0">
+            <p class="mr-3 ml-3 pt-3 mt-0 mb-0"><i class="fonttext">Nom article :</i> <i class="fontdes">{{ emprunt.affaire }}   </i></p>
+            
+            <div class="border border-dark mr-3 ml-3 pt-3 mt-0 mb-0"> 
+                <p class="mr-3 ml-3 pt-3 mt-0 mb-0"> <i class="fonttext">Nom emprunteur :</i> <i class="fontdes">{{ emprunt.emprunteur }}</i></p>          
+                <p class="mr-3 ml-3 pt-3 mt-0 mb-0"><i class="fonttext">Date d'emprunt le :</i> <i class="fontdes">{{ (emprunt.dateDebut|date("d/m/Y")) }}</i></p>
+                <p class="mr-3 ml-3 mt-0"><i class="fonttext">Date de retour le :</i> <i class="fontdes">{{ (emprunt.dateFin|date("d/m/Y")) }}</i></p>
+        </div>
+    </div>
+        {% endfor %}
+    
 </body>
 {% endblock %}
 
