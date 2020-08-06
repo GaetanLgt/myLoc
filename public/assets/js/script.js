@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.collapsible').collapsible();
   });
 
+  
 
   $(document).ready(function(){
     var disable = $('#disable').html();
@@ -90,18 +91,32 @@ document.addEventListener('DOMContentLoaded', function() {
   $(document).ready(function(){
     $('select').formSelect();
   });
-  $(document).ready(function() {
-    function scroll_to_top(div) {
-        $(div).click(function() {
-            $('html,body').animate({scrollTop: 0}, 'slow');
-        });
-        $(window).scroll(function(){
-            if($(window).scrollTop()<500){
-                $(div).fadeOut();
-            } else{
-                $(div).fadeIn();
-            }
-        });
-    }
-    scroll_to_top("#scroll_to_top");
+
+mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+  
+}
+function topFunction() {
+  document.body.scrollTop = 300;
+  document.documentElement.scrollTop = 0;
+}
+function topFunction() {
+
+  $("html, body").animate({scrollTop : 0}, 1300);
+};
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.carousel');
+  var instances = M.Carousel.init(elems, options);
+});
+
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.carousel').carousel();
 });
