@@ -799,7 +799,6 @@ figure {
 	overflow: hidden;
 	border: 2px solid #fff;
 }
-
 figure:hover figcaption {
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 	filter: alpha(opacity=100);
@@ -811,7 +810,6 @@ figure:hover figcaption {
 	transform: rotate(0);
 	top: 0;
 }
-
 figcaption {
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	filter: alpha(opacity=0);
@@ -838,7 +836,6 @@ figcaption {
 	-ms-transform: rotate(360deg);
 	transform: rotate(360deg);
 }
-
 figcaption h4 {
 	font-family: 'Open sans';
 	font-weight: 400;
@@ -860,7 +857,6 @@ figcaption h4 {
 	-ms-transition-delay: 1s;
 	transition-delay: 1s;
 }
-
 figcaption p {
 	font-family: 'Open sans';
 	padding: 10px 20px;
@@ -880,18 +876,15 @@ figcaption p {
 	-ms-transition-delay: 1.3s;
 	transition-delay: 1.3s;
 }
-
 figure:hover h4,figure:hover p {
 	left: 0;
 }
-
 figcaption a {
 	color: #fff;
 	border: 2px solid #fff;
 	padding: 4px 10px;
 	text-decoration: none;
 }
-
 figcaption a:hover {
 	color: #4f5856;
 	background: #fff;
