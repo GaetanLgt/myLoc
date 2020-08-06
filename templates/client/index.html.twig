@@ -14,6 +14,10 @@
     <div class="col-4">
         <h6 class="fontdes mb-3 mt-5 amber lighten-2 mx-auto p-2 rounded z-depth-2">Gérer les informations de votre compte</h6>
             <div class="z-depth-2  rounded">
+            {% if app.user.imageName is empty %}
+            {% else %}
+                <img class="z-depth-2 p-2 col-12 mt-5 animate__animated animate__backInLeft rounded img-fluid materialboxed" width="600" src="/images/user/{{ app.user.imageName }} ">
+            {% endif %}   
                 <p class="pt-3 ml-3"><a class="fonttext ">Nom:</a> <a class="fontdes">{{ app.user.firstname}}</a></p>
                 <p class="ml-3"><a class="fonttext ">Prénom:</a> <a class="fontdes">{{ app.user.lastname}}</a></p>
                 <p class="ml-3"><a class="fonttext ">Email:</a> <a class="fontdes">{{ app.user.email}}</a></p>
@@ -60,20 +64,38 @@
             </div>
             </div>
             </div>
-          
-        
 {% endif %}
-{% for emprunt in emprunts %}
-        <div class="border border-dark mr-3 ml-3 pt-3 mt-0 mb-0">
-            <p class="mr-3 ml-3 pt-3 mt-0 mb-0"><i class="fonttext">Nom article :</i> <i class="fontdes">{{ emprunt.affaire }}   </i></p>
-            
-            <div class="border border-dark mr-3 ml-3 pt-3 mt-0 mb-0"> 
-                <p class="mr-3 ml-3 pt-3 mt-0 mb-0"> <i class="fonttext">Nom emprunteur :</i> <i class="fontdes">{{ emprunt.emprunteur }}</i></p>          
-                <p class="mr-3 ml-3 pt-3 mt-0 mb-0"><i class="fonttext">Date d'emprunt le :</i> <i class="fontdes">{{ (emprunt.dateDebut|date("d/m/Y")) }}</i></p>
-                <p class="mr-3 ml-3 mt-0"><i class="fonttext">Date de retour le :</i> <i class="fontdes">{{ (emprunt.dateFin|date("d/m/Y")) }}</i></p>
-        </div>
-    </div>
+        <h6 class="fontdes amber mb-3 lighten-2 mx-auto p-2 rounded z-depth-2">Produits réserver</h6>
+
+      <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Voir & Gérer les réservation</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <table class="">
+        <thead>
+          <tr class="fonttext1 amber lighten-2 rounded" >
+              <th >Titre</th>
+              <th>Nom </th>
+              <th>Emprunter le:</th>
+              <th>Retour le:</th>
+          </tr>
+        </thead>
+        {% for emprunt in emprunts %}
+        <tbody>
+          <tr>
+            <td>{{ emprunt.affaire }}</td>
+            <td>{{ emprunt.emprunteur }}</td>
+            <td>{{ (emprunt.dateDebut|date("d/m/Y")) }}</td>
+            <td>{{ (emprunt.dateFin|date("d/m/Y")) }}</td>
+          </tr>
+        </tbody>
         {% endfor %}
+      </table>
+    </div>
+  </div>
+
     
 </body>
 {% endblock %}

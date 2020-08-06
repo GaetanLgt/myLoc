@@ -19,7 +19,7 @@
                 <link rel="stylesheet" href="/../../assets/style.css">
     {% endblock stylesheets %}
     
-{% block title %}Modifier un utilisateur{% endblock %}
+{% block title %}Ajouter un utilisateur{% endblock %}
 
 {% block body %}
 
@@ -33,7 +33,7 @@
         </div>
         {% endfor %}
 
-    <h3 class="text-center mb-5 mt-5 amber-text">Modifier un utilisateur</h1>
+    <h3 class="text-center mb-5 mt-5 amber-text">Ajouter un utilisateur</h1>
     <div class="container">
     <div class="row">
     <div class="z-depth-3 col-12 border border-dark rounded">
@@ -41,16 +41,10 @@
     {{ form_start(userForm) }}
         {{ form_row(userForm.firstname, {'label': 'Nom', 'label_attr': {'class':"titlec mt-3"},   'attr': {'class':""}}) }}
         {{ form_row(userForm.lastname, {'label': 'Prenom', 'label_attr': {'class':"titlec"},   'attr': {'class':""}}) }}
-        {{ form_row(userForm.totalPts, {'label': 'Total Points', 'label_attr': {'class':"titlec"},   'attr': {'class':""}}) }}
         {{ form_row(userForm.email, {'label': 'email', 'label_attr': {'class':"titlec"},   'attr': {'class':""}}) }}
-        {{ form_row(userForm.role, { 'label': 'Role', 'label_attr': {'class':"titlec"}, 'attr': {'class':"input-field p-2"}}) }}
-        {{ form_row(userForm.valider, {'label': 'valider', 'label_attr': {'class':"black-text titlec  "}, 'attr': {'class':" mt-2 mb-3 btn waves-effect waves-orange text-uppercase "}}) }}       
+        {{ form_row(userForm.password, { 'label': 'Password', 'label_attr': {'class':"titlec"},   'attr': {'class':""}}) }}
+        {{ form_row(userForm.connexion, {'label': 'valider', 'label_attr': {'class':"black-text titlec  "}, 'attr': {'class':" mt-2 mb-3 btn waves-effect waves-orange text-uppercase "}}) }}       
     {{ form_end(userForm) }}
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-12">
-    <a href="/admin/utilisateurs/add" class="z-depth-3 waves-effect waves-light btn"><i class="material-icons left">add</i>Ajouter</a>
     </div>
     </div>
     </div>

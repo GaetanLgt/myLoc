@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,6 +21,7 @@ class LoginType extends AbstractType
             ->add('email')
             ->add('password', PasswordType::class)
             ->add('connexion', SubmitType::class)
+            ->add('imageFile',VichImageType::class)
         ;
     }
 
