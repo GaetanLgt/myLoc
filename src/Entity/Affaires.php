@@ -215,4 +215,5 @@ class Affaires
     {
         return $this->imageName;
     }
+    
 }
