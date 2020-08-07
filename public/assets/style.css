@@ -268,9 +268,6 @@ main {
    font-size: 1rem;
    text-transform: uppercase;
  }
- 
-
- 
  .text-faded {
    color: rgba(255, 255, 255, 0.7);
  }
