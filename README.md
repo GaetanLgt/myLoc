@@ -27,7 +27,7 @@ Installation
   
   ````bash
   git clone https://github.com/GaetanLgt/myLoc.git
-  cd apiport/
+  cd myLoc/
   composer install
   ````
 #2-configuration base de donnees :
@@ -42,7 +42,7 @@ Installation
     DATABASE_URL=‘mysql://db_user:db_password@127.0.0.1:3306/db_name’
     db_user: root
     db_password: par défaut vide 
-    db_name: nom de votre base par exemple 'apiport'
+    db_name: nom de votre base par exemple 'myLoc'
 
 DATABASE_URL=mysql://admin:Oracle$1986@127.0.0.1:3306/myLoc
 
